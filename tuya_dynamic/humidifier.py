@@ -1,7 +1,6 @@
 """Support for Tuya (de)humidifiers."""
 from __future__ import annotations
 
-from homeassistant.const import Platform
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.humidifier import (
@@ -9,13 +8,14 @@ from homeassistant.components.humidifier import (
     HumidifierEntityFeature,
 )
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
+from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
-from .helpers.enums.dp_code import DPCode
 from .models.tuya_entity_descriptors import TuyaHumidifierEntityDescription
 
 

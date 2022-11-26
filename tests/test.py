@@ -1,17 +1,16 @@
 """Test."""
 from __future__ import annotations
 
+import asyncio
 import dataclasses
 import json
-
-import asyncio
 import logging
 import os
 import sys
 
 from homeassistant.const import Platform
 
-from tuya_dynamic.helpers.tuya_mapping import *
+from ..tuya_dynamic.helpers.tuya_mapping import *
 
 DEBUG = str(os.environ.get("DEBUG", False)).lower() == str(True).lower()
 
@@ -68,7 +67,7 @@ class Test:
             Platform.SELECT: SELECTS,
             Platform.SENSOR: SENSORS,
             Platform.SIREN: SIRENS,
-            Platform.SWITCH: SWITCHES
+            Platform.SWITCH: SWITCHES,
         }
 
         devices = {}
@@ -96,7 +95,7 @@ class Test:
         """
         identical = {}
         devices_cache = {}
-        
+
         for device_key in devices:
             device_data = devices[device_key]
 
@@ -112,9 +111,7 @@ class Test:
                 identical[device_hash] = [device_key]
         """
 
-        payload = {
-            "devices": devices
-        }
+        payload = {"devices": devices}
 
         data = json.dumps(payload, cls=EnhancedJSONEncoder, indent=4)
 

@@ -1,17 +1,17 @@
 """Support for Tuya Smart devices."""
 from __future__ import annotations
 
+import logging
+
 from tuya_iot import TuyaDevice, TuyaDeviceListener, TuyaDeviceManager, TuyaOpenMQ
 
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers.dispatcher import dispatcher_send
-from tuya_dynamic.helpers.const import (
-    DOMAIN,
-    LOGGER,
-    TUYA_DISCOVERY_NEW,
-    TUYA_HA_SIGNAL_UPDATE_ENTITY,
-)
+
+from ..helpers.const import DOMAIN, TUYA_DISCOVERY_NEW, TUYA_HA_SIGNAL_UPDATE_ENTITY
+
+_LOGGER = logging.getLogger(__name__)
 
 
 class DeviceListener(TuyaDeviceListener):
@@ -35,7 +35,7 @@ class DeviceListener(TuyaDeviceListener):
     def update_device(self, device: TuyaDevice) -> None:
         """Update device status."""
         if device.id in self.device_ids:
-            LOGGER.debug(
+            _LOGGER.debug(
                 "Received update for device %s: %s",
                 device.id,
                 self.device_manager.device_map[device.id].status,
@@ -65,7 +65,7 @@ class DeviceListener(TuyaDeviceListener):
     @callback
     def async_remove_device(self, device_id: str) -> None:
         """Remove device from Home Assistant."""
-        LOGGER.debug("Remove device: %s", device_id)
+        _LOGGER.debug("Remove device: %s", device_id)
         device_registry = dr.async_get(self.hass)
         device_entry = device_registry.async_get_device(
             identifiers={(DOMAIN, device_id)}

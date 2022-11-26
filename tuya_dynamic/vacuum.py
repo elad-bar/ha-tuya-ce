@@ -5,20 +5,17 @@ from typing import Any
 
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
-from homeassistant.components.vacuum import (
-    StateVacuumEntity,
-    VacuumEntityFeature
-)
+from homeassistant.components.vacuum import StateVacuumEntity, VacuumEntityFeature
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import STATE_PAUSED, Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
-from .models.base import EnumTypeData, IntegerTypeData, TuyaEntity
 from .helpers.const import TUYA_MODE_RETURN_HOME, TUYA_STATUS_TO_HA
 from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
+from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .models.base import EnumTypeData, IntegerTypeData, TuyaEntity
 
 
 async def async_setup_entry(

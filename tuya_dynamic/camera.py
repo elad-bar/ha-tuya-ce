@@ -1,12 +1,12 @@
 """Support for Tuya cameras."""
 from __future__ import annotations
 
-from homeassistant.const import Platform
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components import ffmpeg
 from homeassistant.components.camera import Camera as CameraEntity, CameraEntityFeature
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 

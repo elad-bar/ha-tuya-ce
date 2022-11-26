@@ -19,7 +19,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import device_registry as dr, entity_registry as er
 
-from tuya_dynamic.helpers.const import (
+from .helpers.const import (
     CONF_ACCESS_ID,
     CONF_ACCESS_SECRET,
     CONF_APP_TYPE,
@@ -29,16 +29,17 @@ from tuya_dynamic.helpers.const import (
     CONF_PASSWORD,
     CONF_PROJECT_TYPE,
     CONF_USERNAME,
+    DEVICE_CONFIG_MANAGER,
+    DEVICE_CONFIG_URL,
     DOMAIN,
     PLATFORMS,
     TUYA_DISCOVERY_NEW,
     TUYA_HA_SIGNAL_UPDATE_ENTITY,
-    DEVICE_CONFIG_URL, DEVICE_CONFIG_MANAGER,
 )
 from .helpers.enums.dp_code import DPCode
-from .models.ha_tuya_data import HomeAssistantTuyaData
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .managers.tuya_device_listener import DeviceListener
+from .models.ha_tuya_data import HomeAssistantTuyaData
 
 _LOGGER = logging.getLogger(__package__)
 

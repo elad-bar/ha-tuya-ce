@@ -2,9 +2,9 @@
 from __future__ import annotations
 
 import base64
-import logging
 from dataclasses import dataclass
 import json
+import logging
 import struct
 from typing import Any, Literal, overload
 

@@ -14,15 +14,15 @@ from homeassistant.helpers import device_registry as dr, entity_registry as er
 from homeassistant.helpers.device_registry import DeviceEntry
 from homeassistant.util import dt as dt_util
 
-from .helpers.enums.dp_code import DPCode
-from .models.ha_tuya_data import HomeAssistantTuyaData
 from .helpers.const import (
     CONF_APP_TYPE,
     CONF_AUTH_TYPE,
     CONF_COUNTRY_CODE,
     CONF_ENDPOINT,
-    DOMAIN
+    DOMAIN,
 )
+from .helpers.enums.dp_code import DPCode
+from .models.ha_tuya_data import HomeAssistantTuyaData
 
 
 async def async_get_config_entry_diagnostics(

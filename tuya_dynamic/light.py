@@ -4,7 +4,6 @@ from __future__ import annotations
 import json
 from typing import Any, cast
 
-from homeassistant.const import Platform
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.light import (
@@ -15,18 +14,19 @@ from homeassistant.components.light import (
     LightEntity,
 )
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
 from .helpers.enums.work_mode import WorkMode
+from .helpers.util import remap_value
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
 from .models.color_data import ColorData
 from .models.color_type_data import ColorTypeData, ColorTypes
 from .models.tuya_entity_descriptors import TuyaLightEntityDescription
-from .helpers.util import remap_value
 
 
 async def async_setup_entry(

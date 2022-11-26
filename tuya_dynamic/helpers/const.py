@@ -2,13 +2,22 @@
 from __future__ import annotations
 
 from homeassistant.components.climate import HVACMode
-from homeassistant.components.vacuum import STATE_CLEANING, STATE_RETURNING, STATE_DOCKED
+from homeassistant.components.vacuum import (
+    STATE_CLEANING,
+    STATE_DOCKED,
+    STATE_RETURNING,
+)
 from homeassistant.const import (
-    Platform, STATE_PAUSED, STATE_IDLE, STATE_ALARM_DISARMED, STATE_ALARM_ARMED_AWAY, STATE_ALARM_ARMED_HOME,
+    STATE_ALARM_ARMED_AWAY,
+    STATE_ALARM_ARMED_HOME,
+    STATE_ALARM_DISARMED,
     STATE_ALARM_TRIGGERED,
+    STATE_IDLE,
+    STATE_PAUSED,
+    Platform,
 )
 
-from tuya_dynamic.helpers.enums.mode import Mode
+from .enums.mode import Mode
 
 DOMAIN = "tuya_dynamic"
 

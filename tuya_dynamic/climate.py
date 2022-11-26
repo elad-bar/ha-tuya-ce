@@ -20,11 +20,11 @@ from homeassistant.const import TEMP_CELSIUS, TEMP_FAHRENHEIT, Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
+from .helpers.const import TUYA_HVAC_TO_HA
 from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
-from .helpers.const import TUYA_HVAC_TO_HA
 from .models.tuya_entity_descriptors import TuyaClimateEntityDescription
 
 

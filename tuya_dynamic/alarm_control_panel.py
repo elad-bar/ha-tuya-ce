@@ -9,17 +9,15 @@ from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
 )
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (
-    Platform,
-)
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
+from .helpers.const import STATE_MAPPING
 from .helpers.enums.dp_type import DPType
 from .helpers.enums.mode import Mode
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .models.base import TuyaEntity
-from .helpers.const import STATE_MAPPING
 
 
 async def async_setup_entry(

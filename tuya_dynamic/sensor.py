@@ -4,24 +4,20 @@ from __future__ import annotations
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 from tuya_iot.device import TuyaDeviceStatusRange
 
-from homeassistant.components.sensor import (
-    SensorEntity
-)
+from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import (Platform)
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import StateType
 
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
-from .models.base import ElectricityTypeData, EnumTypeData, IntegerTypeData, TuyaEntity
-from .helpers.const import (
-    DOMAIN
-)
+from .helpers.const import DOMAIN
 from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
+from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .models.base import ElectricityTypeData, EnumTypeData, IntegerTypeData, TuyaEntity
 from .models.tuya_entity_descriptors import TuyaSensorEntityDescription
-from .models.unit_of_measurement import UnitOfMeasurement, TuyaUnits
+from .models.unit_of_measurement import TuyaUnits, UnitOfMeasurement
 
 
 async def async_setup_entry(

@@ -3,7 +3,6 @@ from __future__ import annotations
 
 from typing import Any
 
-from homeassistant.const import Platform
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.cover import (
@@ -13,6 +12,7 @@ from homeassistant.components.cover import (
     CoverEntityFeature,
 )
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 

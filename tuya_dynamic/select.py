@@ -1,17 +1,17 @@
 """Support for Tuya select."""
 from __future__ import annotations
 
-from homeassistant.const import Platform
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.select import SelectEntity, SelectEntityDescription
 from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
+from .helpers.enums.dp_type import DPType
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .models.base import TuyaEntity
-from .helpers.enums.dp_type import DPType
 
 
 async def async_setup_entry(

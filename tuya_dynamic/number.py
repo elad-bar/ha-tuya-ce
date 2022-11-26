@@ -3,19 +3,16 @@ from __future__ import annotations
 
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
-from homeassistant.components.number import (
-    NumberEntity,
-    NumberEntityDescription,
-)
+from homeassistant.components.number import NumberEntity, NumberEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
-from .models.base import IntegerTypeData, TuyaEntity
 from .helpers.const import DOMAIN
 from .helpers.enums.dp_type import DPType
+from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .models.base import IntegerTypeData, TuyaEntity
 
 
 async def async_setup_entry(

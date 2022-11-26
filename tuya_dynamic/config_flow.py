@@ -9,7 +9,7 @@ import voluptuous as vol
 
 from homeassistant import config_entries
 
-from tuya_dynamic.helpers.const import (
+from .helpers.const import (
     CONF_ACCESS_ID,
     CONF_ACCESS_SECRET,
     CONF_APP_TYPE,
@@ -27,7 +27,7 @@ from tuya_dynamic.helpers.const import (
     TUYA_RESPONSE_SUCCESS,
     TUYA_SMART_APP,
 )
-from tuya_dynamic.models.country import Countries
+from .models.country import Countries
 
 _LOGGER = logging.getLogger(__package__)
 

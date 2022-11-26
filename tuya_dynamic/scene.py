@@ -11,8 +11,8 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .models.ha_tuya_data import HomeAssistantTuyaData
 from .helpers.const import DOMAIN
+from .models.ha_tuya_data import HomeAssistantTuyaData
 
 
 async def async_setup_entry(

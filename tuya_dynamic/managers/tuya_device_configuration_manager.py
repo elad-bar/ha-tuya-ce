@@ -16,14 +16,15 @@ from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from tuya_dynamic import (
+
+from ..helpers.const import (
     DEVICE_CONFIG_MANAGER,
     DEVICE_CONFIG_URL,
     DOMAIN,
     TUYA_DISCOVERY_NEW,
 )
-from tuya_dynamic.binary_sensor import TuyaBinarySensorEntityDescription
-from tuya_dynamic.models.tuya_entity_descriptors import (
+from ..models.tuya_entity_descriptors import (
+    TuyaBinarySensorEntityDescription,
     TuyaClimateEntityDescription,
     TuyaCoverEntityDescription,
     TuyaHumidifierEntityDescription,
