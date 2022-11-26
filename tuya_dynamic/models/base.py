@@ -13,7 +13,8 @@ from tuya_iot import TuyaDevice, TuyaDeviceManager
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity import DeviceInfo, Entity
 
-from ..helpers.const import DOMAIN, TUYA_HA_SIGNAL_UPDATE_ENTITY
+from .. import TuyaDeviceConfigurationManager
+from ..helpers.const import DEVICE_CONFIG_MANAGER, DOMAIN, TUYA_HA_SIGNAL_UPDATE_ENTITY
 from ..helpers.enums.dp_code import DPCode
 from ..helpers.enums.dp_type import DPType
 from ..helpers.util import remap_value
@@ -138,12 +139,16 @@ class TuyaEntity(Entity):
 
     _attr_has_entity_name = True
     _attr_should_poll = False
+    tuya_device_configuration_manager: TuyaDeviceConfigurationManager
 
     def __init__(self, device: TuyaDevice, device_manager: TuyaDeviceManager) -> None:
         """Init TuyaHaEntity."""
         self._attr_unique_id = f"tuya.{device.id}"
         self.device = device
         self.device_manager = device_manager
+
+        integration_data = self.hass.data[DOMAIN]
+        self.tuya_device_configuration_manager = integration_data.get(DEVICE_CONFIG_MANAGER)
 
     @property
     def device_info(self) -> DeviceInfo:

@@ -46,6 +46,18 @@ class TuyaDeviceConfigurationManager:
     def integration_data(self):
         return self._hass.data[DOMAIN]
 
+    @property
+    def countries(self) -> list:
+        return self._data.get("countries", [])
+
+    @property
+    def device_classes(self) -> dict:
+        return self._data.get("device_classes", {})
+
+    @property
+    def devices(self) -> dict:
+        return self._data.get("devices", dict)
+
     @staticmethod
     def get_instance(hass):
         integration_data = hass.data[DOMAIN]
@@ -125,7 +137,7 @@ class TuyaDeviceConfigurationManager:
 
             for device_id in device_ids:
                 device = device_manager.device_map[device_id]
-                category_config = self._data.get(device.category)
+                category_config = self.devices.get(device.category)
 
                 if category_config is None:
                     continue

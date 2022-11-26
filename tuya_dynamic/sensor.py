@@ -17,7 +17,7 @@ from .helpers.enums.dp_type import DPType
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .models.base import ElectricityTypeData, EnumTypeData, IntegerTypeData, TuyaEntity
 from .models.tuya_entity_descriptors import TuyaSensorEntityDescription
-from .models.unit_of_measurement import TuyaUnits, UnitOfMeasurement
+from .models.unit_of_measurement import UnitOfMeasurement
 
 
 async def async_setup_entry(
@@ -50,8 +50,6 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
         """Init Tuya sensor."""
         super().__init__(device, device_manager)
 
-        tuya_units = TuyaUnits()
-
         self.entity_description = description
         self._attr_unique_id = (
             f"{super().unique_id}{description.key}{description.subkey or ''}"
@@ -81,20 +79,27 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
             # device class cannot be found in the validation mapping.
             if (
                 self.native_unit_of_measurement is None
-                or self.device_class not in tuya_units.device_class_mapping
+                or self.device_class not in self.device_classes
             ):
                 self._attr_device_class = None
                 return
 
-            uoms = tuya_units.device_class_mapping[self.device_class]
-            self._uom = uoms.get(self.native_unit_of_measurement) or uoms.get(
-                self.native_unit_of_measurement.lower()
-            )
+            uoms = self.device_classes[self.device_class]
 
-            # Unknown unit of measurement, device class should not be used.
-            if self._uom is None:
+            native_uom = self.native_unit_of_measurement
+
+            uom = None
+            if native_uom in uoms:
+                uom = uoms.get(native_uom)
+            elif native_uom.lower() in uoms:
+                uom = uoms.get(native_uom.lower())
+
+            if uom is None:
                 self._attr_device_class = None
                 return
+
+            else:
+                self._uom = UnitOfMeasurement.from_dict(uom)
 
             # If we still have a device class, we should not use an icon
             if self.device_class:
@@ -113,6 +118,12 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
         instance = TuyaSensorEntity(device, device_manager, description)
 
         return instance
+
+    @property
+    def device_classes(self) -> dict:
+        device_classes = self.tuya_device_configuration_manager.device_classes
+
+        return device_classes
 
     @property
     def native_value(self) -> StateType:
@@ -134,7 +145,7 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
 
         # Scale integer/float value
         if isinstance(self._type_data, IntegerTypeData):
-            scaled_value = self._type_data.scale_value(value)
+            scaled_value: float = self._type_data.scale_value(value)
             if self._uom and self._uom.conversion_fn is not None:
                 return self._uom.conversion_fn(scaled_value)
             return scaled_value

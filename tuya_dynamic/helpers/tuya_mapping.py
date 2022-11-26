@@ -20,7 +20,6 @@ from homeassistant.const import (
 )
 from homeassistant.helpers.entity import EntityCategory
 
-from .enums.tuya_device_class import TuyaDeviceClass
 from ..models.color_type_data import ColorTypes
 from ..models.tuya_entity_descriptors import (
     TuyaBinarySensorEntityDescription,
@@ -31,6 +30,7 @@ from ..models.tuya_entity_descriptors import (
     TuyaSensorEntityDescription,
 )
 from .enums.dp_code import DPCode
+from .enums.tuya_device_class import TuyaDeviceClass
 
 # All descriptions can be found here:
 # https://developer.tuya.com/en/docs/iot/standarddescription?id=K9i5ql6waswzq

@@ -9,6 +9,7 @@ import voluptuous as vol
 
 from homeassistant import config_entries
 
+from . import TuyaDeviceConfigurationManager
 from .helpers.const import (
     CONF_ACCESS_ID,
     CONF_ACCESS_SECRET,
@@ -18,6 +19,7 @@ from .helpers.const import (
     CONF_ENDPOINT,
     CONF_PASSWORD,
     CONF_USERNAME,
+    DEVICE_CONFIG_MANAGER,
     DOMAIN,
     SMARTLIFE_APP,
     TUYA_RESPONSE_CODE,
@@ -27,7 +29,6 @@ from .helpers.const import (
     TUYA_RESPONSE_SUCCESS,
     TUYA_SMART_APP,
 )
-from .models.country import Countries
 
 _LOGGER = logging.getLogger(__package__)
 
@@ -35,24 +36,35 @@ _LOGGER = logging.getLogger(__package__)
 class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Tuya Config Flow."""
 
-    @staticmethod
-    def _try_login(user_input: dict[str, Any]) -> tuple[dict[Any, Any], dict[str, Any]]:
+    @property
+    def tuya_device_configuration_manager(self) -> TuyaDeviceConfigurationManager:
+        integration_data = self.hass.data[DOMAIN]
+        manager = integration_data.get(DEVICE_CONFIG_MANAGER)
+
+        return manager
+
+    @property
+    def countries(self) -> list:
+        countries = self.tuya_device_configuration_manager.countries
+
+        return countries
+
+    def _try_login(self, user_input: dict[str, Any]) -> tuple[dict[Any, Any], dict[str, Any]]:
         """Try login."""
-        response = {}
         country = [
             country
-            for country in Countries.all
-            if country.name == user_input[CONF_COUNTRY_CODE]
+            for country in self.countries
+            if country.get("country_code") == user_input[CONF_COUNTRY_CODE]
         ][0]
 
         data = {
-            CONF_ENDPOINT: country.endpoint,
+            CONF_ENDPOINT: country.get("endpoint"),
             CONF_AUTH_TYPE: AuthType.CUSTOM,
             CONF_ACCESS_ID: user_input[CONF_ACCESS_ID],
             CONF_ACCESS_SECRET: user_input[CONF_ACCESS_SECRET],
             CONF_USERNAME: user_input[CONF_USERNAME],
             CONF_PASSWORD: user_input[CONF_PASSWORD],
-            CONF_COUNTRY_CODE: country.country_code,
+            CONF_COUNTRY_CODE: country.get("country_code"),
         }
 
         for app_type in ("", TUYA_SMART_APP, SMARTLIFE_APP):
@@ -124,7 +136,7 @@ class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         default=user_input.get(CONF_COUNTRY_CODE, "United States"),
                     ): vol.In(
                         # We don't pass a dict {code:name} because country codes can be duplicate.
-                        [country.name for country in Countries.all]
+                        [country.get("name") for country in self.countries]
                     ),
                     vol.Required(
                         CONF_ACCESS_ID, default=user_input.get(CONF_ACCESS_ID, "")
