@@ -13,9 +13,8 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .helpers.const import STATE_MAPPING
 from .helpers.enums.dp_type import DPType
-from .helpers.enums.mode import Mode
+from .helpers.enums.mode import STATE_MAPPING, Mode
 from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 from .models.base import TuyaEntity
 
@@ -38,12 +37,13 @@ class TuyaAlarmEntity(TuyaEntity, AlarmControlPanelEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: AlarmControlPanelEntityDescription,
     ) -> None:
         """Init Tuya Alarm."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
         self.entity_description = description
         self._attr_unique_id = f"{super().unique_id}{description.key}"
 
@@ -61,10 +61,11 @@ class TuyaAlarmEntity(TuyaEntity, AlarmControlPanelEntity):
                 self._attr_supported_features |= AlarmControlPanelEntityFeature.TRIGGER
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: AlarmControlPanelEntityDescription):
-        instance = TuyaAlarmEntity(device, device_manager, description)
+        instance = TuyaAlarmEntity(hass, device, device_manager, description)
 
         return instance
 

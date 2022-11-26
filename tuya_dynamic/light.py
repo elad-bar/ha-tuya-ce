@@ -55,12 +55,13 @@ class TuyaLightEntity(TuyaEntity, LightEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: TuyaLightEntityDescription,
     ) -> None:
         """Init TuyaHaLight."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
         self.entity_description = description
         self._attr_unique_id = f"{super().unique_id}{description.key}"
         self._attr_supported_color_modes: set[ColorMode] = set()
@@ -117,10 +118,11 @@ class TuyaLightEntity(TuyaEntity, LightEntity):
             self._attr_supported_color_modes = {ColorMode.ONOFF}
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: TuyaLightEntityDescription):
-        instance = TuyaLightEntity(device, device_manager, description)
+        instance = TuyaLightEntity(hass, device, device_manager, description)
 
         return instance
 

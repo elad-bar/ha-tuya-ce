@@ -32,20 +32,22 @@ class TuyaBinarySensorEntity(TuyaEntity, BinarySensorEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: TuyaBinarySensorEntityDescription,
     ) -> None:
         """Init Tuya binary sensor."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
         self.entity_description = description
         self._attr_unique_id = f"{super().unique_id}{description.key}"
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: TuyaBinarySensorEntityDescription):
-        instance = TuyaBinarySensorEntity(device, device_manager, description)
+        instance = TuyaBinarySensorEntity(hass, device, device_manager, description)
 
         return instance
 

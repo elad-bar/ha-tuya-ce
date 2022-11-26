@@ -34,18 +34,20 @@ class TuyaCameraEntity(TuyaEntity, CameraEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
     ) -> None:
         """Init Tuya Camera."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
         CameraEntity.__init__(self)
         self._attr_model = device.product_name
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager):
-        instance = TuyaCameraEntity(device, device_manager)
+        instance = TuyaCameraEntity(hass, device, device_manager)
 
         return instance
 

@@ -30,12 +30,13 @@ class TuyaSelectEntity(TuyaEntity, SelectEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: SelectEntityDescription,
     ) -> None:
         """Init Tuya sensor."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
         self.entity_description = description
         self._attr_unique_id = f"{super().unique_id}{description.key}"
 
@@ -46,10 +47,11 @@ class TuyaSelectEntity(TuyaEntity, SelectEntity):
             self._attr_options = enum_type.range
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: SelectEntityDescription):
-        instance = TuyaSelectEntity(device, device_manager, description)
+        instance = TuyaSelectEntity(hass, device, device_manager, description)
 
         return instance
 

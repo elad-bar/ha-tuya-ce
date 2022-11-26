@@ -35,9 +35,13 @@ class TuyaVacuumEntity(TuyaEntity, StateVacuumEntity):
     _fan_speed: EnumTypeData | None = None
     _battery_level: IntegerTypeData | None = None
 
-    def __init__(self, device: TuyaDevice, device_manager: TuyaDeviceManager) -> None:
+    def __init__(self,
+                 hass: HomeAssistant,
+                 device: TuyaDevice,
+                 device_manager: TuyaDeviceManager) -> None:
+
         """Init Tuya vacuum."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
 
         self._attr_fan_speed_list = []
 
@@ -84,9 +88,10 @@ class TuyaVacuumEntity(TuyaEntity, StateVacuumEntity):
             self._battery_level = int_type
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager):
-        instance = TuyaVacuumEntity(device, device_manager)
+        instance = TuyaVacuumEntity(hass, device, device_manager)
 
         return instance
 

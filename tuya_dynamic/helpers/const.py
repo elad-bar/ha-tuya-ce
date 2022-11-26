@@ -7,17 +7,7 @@ from homeassistant.components.vacuum import (
     STATE_DOCKED,
     STATE_RETURNING,
 )
-from homeassistant.const import (
-    STATE_ALARM_ARMED_AWAY,
-    STATE_ALARM_ARMED_HOME,
-    STATE_ALARM_DISARMED,
-    STATE_ALARM_TRIGGERED,
-    STATE_IDLE,
-    STATE_PAUSED,
-    Platform,
-)
-
-from .enums.mode import Mode
+from homeassistant.const import STATE_IDLE, STATE_PAUSED, Platform
 
 DOMAIN = "tuya_dynamic"
 
@@ -90,13 +80,6 @@ TUYA_STATUS_TO_HA = {
     "wall_clean": STATE_CLEANING,
     "wall_follow": STATE_CLEANING,
     "zone_clean": STATE_CLEANING,
-}
-
-STATE_MAPPING: dict[str, str] = {
-    Mode.DISARMED: STATE_ALARM_DISARMED,
-    Mode.ARM: STATE_ALARM_ARMED_AWAY,
-    Mode.HOME: STATE_ALARM_ARMED_HOME,
-    Mode.SOS: STATE_ALARM_TRIGGERED,
 }
 
 TUYA_HVAC_TO_HA = {

@@ -1,6 +1,9 @@
+from collections.abc import Callable
 import json
 import logging
 import sys
+
+from tuya_iot import TuyaDeviceManager
 
 from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntityDescription,
@@ -15,6 +18,7 @@ from homeassistant.const import Platform
 from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from homeassistant.helpers.entity import EntityDescription
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from ..helpers.const import (
@@ -23,6 +27,7 @@ from ..helpers.const import (
     DOMAIN,
     TUYA_DISCOVERY_NEW,
 )
+from ..models.color_type_data import ColorTypes
 from ..models.tuya_entity_descriptors import (
     TuyaBinarySensorEntityDescription,
     TuyaClimateEntityDescription,
@@ -34,13 +39,21 @@ from ..models.tuya_entity_descriptors import (
 
 _LOGGER = logging.getLogger(__name__)
 
+ENTITY_DESCRIPTION_DEFAULTS = {
+    "default_color_type": ColorTypes.v1,
+    "open_instruction_value": "open",
+    "close_instruction_value": "close",
+    "stop_instruction_value": "stop",
+    "on_value": True
+}
+
 
 class TuyaDeviceConfigurationManager:
     def __init__(self, hass):
         self._hass = hass
         self._session = async_create_clientsession(hass=self._hass)
         self._data = None
-        self._mappers = None
+        self._domain_handlers = None
 
     @property
     def integration_data(self):
@@ -67,7 +80,7 @@ class TuyaDeviceConfigurationManager:
 
     async def initialize(self):
         try:
-            self._load_mappers()
+            self._load_domain_handlers()
 
             if self._data is None:
                 async with self._session.get(DEVICE_CONFIG_URL, ssl=False) as response:
@@ -105,14 +118,19 @@ class TuyaDeviceConfigurationManager:
                 device = device_data.get("device")
                 entity_description = device_data.get("entity_description")
 
-                if enabled:
-                    if entity_description is None:
-                        instance = initializer(device, device_manager)
-                    else:
-                        instance = initializer(device, device_manager, entity_description)
+                _LOGGER.debug(device_data)
 
-                    if instance is not None:
-                        entities.append(instance)
+                if enabled:
+                    try:
+                        if entity_description is None:
+                            instance = initializer(self._hass, device, device_manager)
+                        else:
+                            instance = initializer(self._hass, device, device_manager, entity_description)
+
+                        if instance is not None:
+                            entities.append(instance)
+                    except Exception as ex:
+                        _LOGGER.error(f"Failed to create {domain} entity, Error: {ex}")
 
             async_add_entities(entities)
 
@@ -126,11 +144,11 @@ class TuyaDeviceConfigurationManager:
         tuya_data = self.integration_data.get(entry_id)
         device_manager = tuya_data.device_manager
 
-        mapper = self._mappers.get(domain)
+        domain_handler = self._domain_handlers.get(domain)
 
         devices = []
 
-        if mapper is None:
+        if domain_handler is None:
             _LOGGER.error(f"Tuya entity description mapper was not found for domain: {domain}")
 
         else:
@@ -148,29 +166,74 @@ class TuyaDeviceConfigurationManager:
                     continue
 
                 for entity_config in entities_config:
-                    device_description = mapper(entity_config, device)
+                    mapper = domain_handler.get("mapper")
+                    fields = domain_handler.get("fields")
+
+                    device_description = mapper(entity_config, device, fields)
 
                     devices.append(device_description)
 
         return devices
 
-    def _load_mappers(self):
-        self._mappers = {
-            Platform.CAMERA: self._mapper_camera,
-            Platform.FAN: self._mapper_fan,
-            Platform.VACUUM: self._mapper_vacuum,
-            Platform.ALARM_CONTROL_PANEL: self._mapper_alarm_control_panel,
-            Platform.BINARY_SENSOR: self._mapper_binary_sensor,
-            Platform.BUTTON: self._mapper_button,
-            Platform.CLIMATE: self._mapper_climate,
-            Platform.COVER: self._mapper_cover,
-            Platform.HUMIDIFIER: self._mapper_humidifier,
-            Platform.LIGHT: self._mapper_light,
-            Platform.NUMBER: self._mapper_number,
-            Platform.SELECT: self._mapper_select,
-            Platform.SENSOR: self._mapper_sensor,
-            Platform.SIREN: self._mapper_siren,
-            Platform.SWITCH: self._mapper_switch
+    def _load_domain_handlers(self):
+        self._domain_handlers = {
+            Platform.CAMERA: {
+                "mapper": self._mapper_camera
+            },
+            Platform.FAN: {
+                "mapper": self._mapper_fan
+            },
+            Platform.VACUUM: {
+                "mapper": self._mapper_vacuum
+            },
+            Platform.ALARM_CONTROL_PANEL: {
+                "mapper": self._mapper_alarm_control_panel,
+                "fields": ["name"]
+            },
+            Platform.BINARY_SENSOR: {
+                "mapper": self._mapper_binary_sensor,
+                "fields": ["dpcode", "name", "icon", "on_value", "device_class", "entity_category"]
+            },
+            Platform.BUTTON: {
+                "mapper": self._mapper_button,
+                "fields": ["name", "icon", "entity_category"]
+            },
+            Platform.CLIMATE: {
+                "mapper": self._mapper_climate,
+                "fields": ["switch_only_hvac_mode"]
+            },
+            Platform.COVER: {
+                "mapper": self._mapper_cover,
+                "fields": ["name", "current_state", "current_position", "current_position", "set_position", "device_class", "open_instruction_value", "close_instruction_value", "stop_instruction_value"]
+            },
+            Platform.HUMIDIFIER: {
+                "mapper": self._mapper_humidifier,
+                "fields": ["dpcode", "humidity", "device_class"]
+            },
+            Platform.LIGHT: {
+                "mapper": self._mapper_light,
+                "fields": ["name", "brightness", "brightness_max", "brightness_min", "device_class", "color_mode", "color_temp", "entity_category", "default_color_type", "color_data"]
+            },
+            Platform.NUMBER: {
+                "mapper": self._mapper_number,
+                "fields": ["name", "device_class", "entity_category", "icon", "native_unit_of_measurement"]
+            },
+            Platform.SELECT: {
+                "mapper": self._mapper_select,
+                "fields": ["name", "device_class", "entity_category", "icon"]
+            },
+            Platform.SENSOR: {
+                "mapper": self._mapper_sensor,
+                "fields": ["name", "device_class", "state_class", "entity_category", "icon", "native_unit_of_measurement", "entity_registry_enabled_default", "subkey"]
+            },
+            Platform.SIREN: {
+                "mapper": self._mapper_siren,
+                "fields": ["name"]
+            },
+            Platform.SWITCH: {
+                "mapper": self._mapper_switch,
+                "fields": ["name", "icon", "entity_category", "device_class"]
+            },
         }
 
     @staticmethod
@@ -201,225 +264,147 @@ class TuyaDeviceConfigurationManager:
         return data
 
     @staticmethod
-    def _mapper_alarm_control_panel(entity_config, device):
+    def _mapper_alarm_control_panel(entity_config, device, fields: list[str]):
         entity_description = AlarmControlPanelEntityDescription(
-            key=entity_config.get("key"),
-            name=entity_config.get("name")
+            key=entity_config.get("key")
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_binary_sensor(entity_config, device):
+    def _mapper_binary_sensor(entity_config, device, fields: list[str]):
         entity_description = TuyaBinarySensorEntityDescription(
-            key=entity_config.get("key"),
-            dpcode=entity_config.get("dpcode"),
-            name=entity_config.get("name"),
-            icon=entity_config.get("icon"),
-            on_value=entity_config.get("on_value"),
-            device_class=entity_config.get("device_class"),
-            entity_category=entity_config.get("entity_category"),
+            key=entity_config.get("key")
         )
 
-        dpcode = entity_description.dpcode or entity_description.key
+        validation: Callable[[EntityDescription, TuyaDeviceManager], bool] = lambda e, d: e.key in d.status or e.dpcode in d.status
 
-        data = {
-            "enabled": dpcode in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields, validation)
 
         return data
 
     @staticmethod
-    def _mapper_button(entity_config, device):
+    def _mapper_button(entity_config, device, fields: list[str]):
         entity_description = ButtonEntityDescription(
-            key=entity_config.get("key"),
-            name=entity_config.get("name"),
-            icon=entity_config.get("icon"),
-            entity_category=entity_config.get("entity_category"),
+            key=entity_config.get("key")
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_climate(entity_config, device):
+    def _mapper_climate(entity_config, device, fields: list[str]):
         entity_description = TuyaClimateEntityDescription(
-            key=entity_config.get("key"),
-            switch_only_hvac_mode=entity_config.get("switch_only_hvac_mode"),
+            key=entity_config.get("key")
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_cover(entity_config, device):
+    def _mapper_cover(entity_config, device, fields: list[str]):
         entity_description = TuyaCoverEntityDescription(
-            key=entity_config.get("key"),
-            name=entity_config.get("name"),
-            current_state=entity_config.get("current_state"),
-            current_position=entity_config.get("current_position"),
-            set_position=entity_config.get("set_position"),
-            device_class=entity_config.get("device_class"),
-            open_instruction_value=entity_config.get("open_instruction_value"),
-            close_instruction_value=entity_config.get("close_instruction_value"),
-            stop_instruction_value=entity_config.get("stop_instruction_value"),
+            key=entity_config.get("key")
         )
 
-        entity_key = entity_description.key
+        validation: Callable[[EntityDescription, TuyaDeviceManager], bool] = lambda e, d: e.key in d.function or e.key in d.status_range
 
-        data = {
-            "enabled": entity_key in device.function or entity_key in device.status_range,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields, validation)
 
         return data
 
     @staticmethod
-    def _mapper_humidifier(entity_config, device):
+    def _mapper_humidifier(entity_config, device, fields: list[str]):
         entity_description = TuyaHumidifierEntityDescription(
-            key=entity_config.get("key"),
-            dpcode=entity_config.get("dpcode"),
-            humidity=entity_config.get("humidity"),
-            device_class=entity_config.get("device_class"),
+            key=entity_config.get("key")
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_light(entity_config, device):
+    def _mapper_light(entity_config, device, fields: list[str]):
         entity_description = TuyaLightEntityDescription(
             key=entity_config.get("key"),
-            name=entity_config.get("name"),
-            brightness=entity_config.get("brightness"),
-            brightness_max=entity_config.get("brightness_max"),
-            brightness_min=entity_config.get("brightness_min"),
-            device_class=entity_config.get("device_class"),
-            color_mode=entity_config.get("color_mode"),
-            color_temp=entity_config.get("color_temp"),
-            entity_category=entity_config.get("entity_category"),
-            default_color_type=entity_config.get("default_color_type"),
-            color_data=entity_config.get("color_data"),
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_number(entity_config, device):
+    def _mapper_number(entity_config, device, fields: list[str]):
         entity_description = NumberEntityDescription(
             key=entity_config.get("key"),
-            name=entity_config.get("name"),
-            device_class=entity_config.get("device_class"),
-            entity_category=entity_config.get("entity_category"),
-            icon=entity_config.get("icon"),
-            native_unit_of_measurement=entity_config.get("native_unit_of_measurement")
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_select(entity_config, device):
+    def _mapper_select(entity_config, device, fields: list[str]):
         entity_description = SelectEntityDescription(
             key=entity_config.get("key"),
-            name=entity_config.get("name"),
-            device_class=entity_config.get("device_class"),
-            entity_category=entity_config.get("entity_category"),
-            icon=entity_config.get("icon"),
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_sensor(entity_config, device):
+    def _mapper_sensor(entity_config, device, fields: list[str]):
         entity_description = TuyaSensorEntityDescription(
-            key=entity_config.get("key"),
-            name=entity_config.get("name"),
-            device_class=entity_config.get("device_class"),
-            state_class=entity_config.get("state_class"),
-            entity_category=entity_config.get("entity_category"),
-            icon=entity_config.get("icon"),
-            native_unit_of_measurement=entity_config.get("native_unit_of_measurement"),
-            entity_registry_enabled_default=entity_config.get("entity_registry_enabled_default"),
-            subkey=entity_config.get("subkey"),
+            key=entity_config.get("key")
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_siren(entity_config, device):
+    def _mapper_siren(entity_config, device, fields: list[str]):
         entity_description = SirenEntityDescription(
-            key=entity_config.get("key"),
-            name=entity_config.get("name"),
+            key=entity_config.get("key")
         )
 
-        data = {
-            "enabled": entity_description.key in device.status,
-            "device": device,
-            "entity_description": entity_description
-        }
+        data = _get_entity_description(entity_description, device, entity_config, fields)
 
         return data
 
     @staticmethod
-    def _mapper_switch(entity_config, device):
+    def _mapper_switch(entity_config, device, fields: list[str]):
         entity_description = SwitchEntityDescription(
-            key=entity_config.get("key"),
-            name=entity_config.get("name"),
-            icon=entity_config.get("icon"),
-            entity_category=entity_config.get("entity_category"),
-            device_class=entity_config.get("device_class"),
+            key=entity_config.get("key")
         )
 
+        data = _get_entity_description(entity_description, device, entity_config, fields)
+
+        return data
+
+
+def _get_entity_description(entity_description: EntityDescription,
+                            device: TuyaDeviceManager,
+                            data: dict,
+                            fields: list,
+                            is_enabled: Callable[[EntityDescription, TuyaDeviceManager], bool] = lambda e, d: e.key in d.status):
+
+    for key in fields:
+        value = data.get(key)
+
+        if value is None and key in ENTITY_DESCRIPTION_DEFAULTS:
+            value = ENTITY_DESCRIPTION_DEFAULTS.get(key)
+
+        if hasattr(entity_description, key):
+            setattr(entity_description, key, value)
+
         data = {
-            "enabled": entity_description.key in device.status,
+            "enabled": is_enabled(entity_description, device),
             "device": device,
             "entity_description": entity_description
         }

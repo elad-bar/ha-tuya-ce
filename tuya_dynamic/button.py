@@ -29,20 +29,22 @@ class TuyaButtonEntity(TuyaEntity, ButtonEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: ButtonEntityDescription,
     ) -> None:
         """Init Tuya button."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
         self.entity_description = description
         self._attr_unique_id = f"{super().unique_id}{description.key}"
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: ButtonEntityDescription):
-        instance = TuyaButtonEntity(device, device_manager, description)
+        instance = TuyaButtonEntity(hass, device, device_manager, description)
 
         return instance
 

@@ -49,11 +49,12 @@ class TuyaFanEntity(TuyaEntity, FanEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
     ) -> None:
         """Init Tuya Fan Device."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
 
         self._switch = self.find_dpcode(
             (DPCode.SWITCH_FAN, DPCode.FAN_SWITCH, DPCode.SWITCH), prefer_function=True
@@ -98,9 +99,10 @@ class TuyaFanEntity(TuyaEntity, FanEntity):
             self._attr_supported_features |= FanEntityFeature.DIRECTION
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager):
-        instance = TuyaFanEntity(device, device_manager)
+        instance = TuyaFanEntity(hass, device, device_manager)
 
         return instance
 

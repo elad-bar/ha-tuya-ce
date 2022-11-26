@@ -51,6 +51,7 @@ class TuyaClimateEntity(TuyaEntity, ClimateEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: TuyaClimateEntityDescription,
@@ -59,7 +60,7 @@ class TuyaClimateEntity(TuyaEntity, ClimateEntity):
         self._attr_target_temperature_step = 1.0
         self.entity_description = description
 
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
 
         # If both temperature values for celsius and fahrenheit are present,
         # use whatever the device is set to, with a fallback to celsius.
@@ -192,10 +193,11 @@ class TuyaClimateEntity(TuyaEntity, ClimateEntity):
                 self._attr_swing_modes.append(SWING_VERTICAL)
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: TuyaClimateEntityDescription):
-        instance = TuyaClimateEntity(device, device_manager, description)
+        instance = TuyaClimateEntity(hass, device, device_manager, description)
 
         return instance
 

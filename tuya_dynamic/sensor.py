@@ -43,12 +43,13 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: TuyaSensorEntityDescription,
     ) -> None:
         """Init Tuya sensor."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
 
         self.entity_description = description
         self._attr_unique_id = (
@@ -112,10 +113,11 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
             )
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: TuyaSensorEntityDescription):
-        instance = TuyaSensorEntity(device, device_manager, description)
+        instance = TuyaSensorEntity(hass, device, device_manager, description)
 
         return instance
 

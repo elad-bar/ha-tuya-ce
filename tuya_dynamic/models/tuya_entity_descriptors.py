@@ -25,17 +25,9 @@ class TuyaBinarySensorEntityDescription(BinarySensorEntityDescription):
 
 
 @dataclass
-class TuyaClimateSensorDescriptionMixin:
-    """Define an entity description mixin for climate entities."""
-
-    switch_only_hvac_mode: HVACMode
-
-
-@dataclass
-class TuyaClimateEntityDescription(
-    ClimateEntityDescription, TuyaClimateSensorDescriptionMixin
-):
+class TuyaClimateEntityDescription(ClimateEntityDescription):
     """Describe an Tuya climate entity."""
+    switch_only_hvac_mode: HVACMode = HVACMode.OFF
 
 
 @dataclass

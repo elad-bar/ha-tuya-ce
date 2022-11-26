@@ -9,7 +9,6 @@ import voluptuous as vol
 
 from homeassistant import config_entries
 
-from . import TuyaDeviceConfigurationManager
 from .helpers.const import (
     CONF_ACCESS_ID,
     CONF_ACCESS_SECRET,
@@ -29,6 +28,7 @@ from .helpers.const import (
     TUYA_RESPONSE_SUCCESS,
     TUYA_SMART_APP,
 )
+from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
 
 _LOGGER = logging.getLogger(__package__)
 

@@ -44,12 +44,13 @@ class TuyaCoverEntity(TuyaEntity, CoverEntity):
 
     def __init__(
         self,
+        hass: HomeAssistant,
         device: TuyaDevice,
         device_manager: TuyaDeviceManager,
         description: TuyaCoverEntityDescription,
     ) -> None:
         """Init Tuya Cover."""
-        super().__init__(device, device_manager)
+        super().__init__(hass, device, device_manager)
         self.entity_description = description
         self._attr_unique_id = f"{super().unique_id}{description.key}"
         self._attr_supported_features = CoverEntityFeature(0)
@@ -95,10 +96,11 @@ class TuyaCoverEntity(TuyaEntity, CoverEntity):
             self._tilt = int_type
 
     @staticmethod
-    def create_entity(device: TuyaDevice,
+    def create_entity(hass: HomeAssistant,
+                      device: TuyaDevice,
                       device_manager: TuyaDeviceManager,
                       description: TuyaCoverEntityDescription):
-        instance = TuyaCoverEntity(device, device_manager, description)
+        instance = TuyaCoverEntity(hass, device, device_manager, description)
 
         return instance
 
