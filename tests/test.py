@@ -35,9 +35,9 @@ from homeassistant.const import (
     VOLUME_CUBIC_METERS,
     Platform,
 )
-from tuya_dynamic.helpers.tuya_mapping import *
-from tuya_dynamic.models.country import Country
-from tuya_dynamic.models.unit_of_measurement import UnitOfMeasurement
+from tuya_ce.helpers.tuya_mapping import *
+from tuya_ce.models.country import Country
+from tuya_ce.models.unit_of_measurement import UnitOfMeasurement
 
 DEBUG = str(os.environ.get("DEBUG", False)).lower() == str(True).lower()
 

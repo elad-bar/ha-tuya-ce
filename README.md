@@ -2,7 +2,7 @@
 
 ## Description
 
-[Changelog](https://github.com/elad-bar/ha-tuya-dynamic/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/elad-bar/ha-tuya-ce/blob/master/CHANGELOG.md)
 
 ## How to
 
@@ -10,7 +10,7 @@
 
 
 #### Installations via HACS
-- In HACS, look for "Tuya Dynamic" and install and restart
+- In HACS, look for "Tuya CE" and install and restart
 - In Settings  --> Devices & Services - (Lower Right) "Add Integration"
 
 #### Setup

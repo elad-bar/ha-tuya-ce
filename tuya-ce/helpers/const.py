@@ -9,10 +9,10 @@ from homeassistant.components.vacuum import (
 )
 from homeassistant.const import STATE_IDLE, STATE_PAUSED, Platform
 
-DOMAIN = "tuya_dynamic"
+DOMAIN = "tuya_ce"
 
 DEVICE_CONFIG_MANAGER = "device_config_manager"
-DEVICE_CONFIG_URL = "https://raw.githubusercontent.com/elad-bar/ha-tuya-dynamic/main/config/devices.json"
+DEVICE_CONFIG_URL = "https://raw.githubusercontent.com/elad-bar/ha-tuya-ce/main/config/tuya.json"
 
 CONF_AUTH_TYPE = "auth_type"
 CONF_PROJECT_TYPE = "tuya_project_type"
