@@ -1,5 +1,49 @@
 {
     "devices": {
+        "ggq": {
+            "switch": [
+                {
+                    "key": "start",
+                    "device_class": null,
+                    "entity_category": null,
+                    "entity_registry_enabled_default": true,
+                    "entity_registry_visible_default": true,
+                    "force_update": false,
+                    "icon": "mdi:kettle-steam",
+                    "has_entity_name": false,
+                    "name": "Start",
+                    "unit_of_measurement": null
+                },
+                {
+                    "key": "switch",
+                    "device_class": null,
+                    "entity_category": null,
+                    "entity_registry_enabled_default": true,
+                    "entity_registry_visible_default": true,
+                    "force_update": false,
+                    "icon": null,
+                    "has_entity_name": false,
+                    "name": "Power",
+                    "unit_of_measurement": null
+                }
+            ],
+            "select": [
+                {
+                    "key": "smart_weather",
+                    "device_class": "tuya__smart_weather",
+                    "entity_category": null,
+                    "entity_registry_enabled_default": true,
+                    "entity_registry_visible_default": true,
+                    "force_update": false,
+                    "icon": null,
+                    "has_entity_name": false,
+                    "name": "Weather",
+                    "unit_of_measurement": null,
+                    "options": null
+                }
+            ]
+        },
+
         "mal": {
             "alarm_control_panel": [
                 {
