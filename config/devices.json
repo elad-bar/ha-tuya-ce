@@ -1305,8 +1305,8 @@
                     "unit_of_measurement": null,
                     "dpcode": null,
                     "on_value": [
-                        "open",
-                        "opened"
+                        "opened",
+                        "open"
                     ]
                 }
             ],

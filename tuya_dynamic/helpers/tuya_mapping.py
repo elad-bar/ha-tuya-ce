@@ -20,6 +20,8 @@ from homeassistant.const import (
 )
 from homeassistant.helpers.entity import EntityCategory
 
+from .enums.tuya_device_class import TuyaDeviceClass
+from ..models.color_type_data import ColorTypes
 from ..models.tuya_entity_descriptors import (
     TuyaBinarySensorEntityDescription,
     TuyaClimateEntityDescription,
@@ -610,7 +612,7 @@ LIGHTS: dict[str, tuple[TuyaLightEntityDescription, ...]] = {
             brightness=DPCode.BRIGHT_VALUE,
             color_temp=DPCode.TEMP_VALUE,
             color_data=DPCode.COLOUR_DATA,
-            default_color_type=DEFAULT_COLOR_TYPE_DATA_V2,
+            default_color_type=ColorTypes().v2,
         ),
     ),
     # Light

@@ -64,3 +64,4 @@ target/
 venv/
 
 __test__.py
+**/__pycache_/

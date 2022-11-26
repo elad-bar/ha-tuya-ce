@@ -10,7 +10,7 @@ import sys
 
 from homeassistant.const import Platform
 
-from ..tuya_dynamic.helpers.tuya_mapping import *
+from tuya_dynamic.helpers.tuya_mapping import *
 
 DEBUG = str(os.environ.get("DEBUG", False)).lower() == str(True).lower()
 
@@ -91,25 +91,6 @@ class Test:
                     devices[device_category_key] = {}
 
                 devices[device_category_key][domain] = True
-
-        """
-        identical = {}
-        devices_cache = {}
-
-        for device_key in devices:
-            device_data = devices[device_key]
-
-            device_data_json = json.dumps(device_data, cls=EnhancedJSONEncoder, indent=4)
-
-            md5 = hashlib.md5(device_data_json.encode())
-            device_hash = md5.hexdigest()
-
-            if device_hash in devices_cache:
-                identical[device_hash].append(device_key)
-
-            else:
-                identical[device_hash] = [device_key]
-        """
 
         payload = {"devices": devices}
 
