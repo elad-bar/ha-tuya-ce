@@ -1,0 +1,10 @@
+pre-commit
+homeassistant~=2022.11.4
+voluptuous~=0.13.1
+aiohttp
+cryptography
+numpy
+ffmpeg
+tuya-iot-py-sdk==0.6.6
+ha-ffmpeg==3.0.2
+requests~=2.28.1

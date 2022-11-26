@@ -3565,7 +3565,8 @@
                     "name": "Mute Voice",
                     "unit_of_measurement": null
                 }
-            ]
+            ],
+            "vacuum": true
         },
         "hxd": {
             "button": [
