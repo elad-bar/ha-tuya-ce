@@ -1,5 +1,26 @@
 {
     "devices": {
+        "qt": {
+            "sensor": [
+                {
+                    "key": "weight",
+                    "device_class": null,
+                    "entity_category": null,
+                    "entity_registry_enabled_default": true,
+                    "entity_registry_visible_default": true,
+                    "force_update": false,
+                    "icon": null,
+                    "has_entity_name": false,
+                    "name": "Weight",
+                    "unit_of_measurement": null,
+                    "suggested_unit_of_measurement": null,
+                    "last_reset": null,
+                    "native_unit_of_measurement": null,
+                    "state_class": "measurement",
+                    "subkey": null
+                }
+            ]
+        },
         "ggq": {
             "switch": [
                 {
