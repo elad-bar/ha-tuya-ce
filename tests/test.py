@@ -37,6 +37,7 @@ from homeassistant.const import (
 )
 from tuya_ce.helpers.tuya_mapping import *
 from tuya_ce.models.country import Country
+from tuya_ce.models.platform_fields import PlatformFields
 from tuya_ce.models.unit_of_measurement import UnitOfMeasurement
 
 DEBUG = str(os.environ.get("DEBUG", False)).lower() == str(True).lower()
@@ -564,6 +565,21 @@ class Test:
             Platform.SWITCH: SWITCHES,
         }
 
+        platform_fields = {
+            Platform.ALARM_CONTROL_PANEL: PlatformFields.ALARM_CONTROL_PANEL,
+            Platform.BINARY_SENSOR: PlatformFields.BINARY_SENSOR,
+            Platform.BUTTON: PlatformFields.BUTTON,
+            Platform.CLIMATE: PlatformFields.CLIMATE,
+            Platform.COVER: PlatformFields.COVER,
+            Platform.HUMIDIFIER: PlatformFields.HUMIDIFIER,
+            Platform.LIGHT: PlatformFields.LIGHT,
+            Platform.NUMBER: PlatformFields.NUMBER,
+            Platform.SELECT: PlatformFields.SELECT,
+            Platform.SENSOR: PlatformFields.SENSOR,
+            Platform.SIREN: PlatformFields.SIREN,
+            Platform.SWITCH: PlatformFields.SWITCH
+        }
+
         devices = {}
 
         for domain in data_items:
@@ -575,7 +591,23 @@ class Test:
                 if device_category_key not in devices:
                     devices[device_category_key] = {}
 
-                devices[device_category_key][domain] = device_category_items
+                domain_fields = platform_fields.get(domain, [])
+
+                device_category_items_json = json.dumps(device_category_items, cls=EnhancedJSONEncoder, indent=4)
+                objs = json.loads(device_category_items_json)
+
+                if not isinstance(objs, list):
+                    objs = [objs]
+
+                for obj in objs:
+                    keys = list(obj)
+
+                    for field in keys:
+                        value = obj[field]
+                        if (field not in domain_fields or value is None) and field != "key":
+                            del obj[field]
+
+                devices[device_category_key][domain] = objs
 
         for domain in data_mapping:
             device_categories = data_mapping.get(domain)
@@ -591,11 +623,11 @@ class Test:
 
         payload = {
             "devices": devices,
-            "countries": countries,
-            "device_class": device_class_mapping,
+            # "countries": countries,
+            # "device_class": device_class_mapping,
         }
 
-        data = json.dumps(payload, cls=EnhancedJSONEncoder, indent=4)
+        data = json.dumps(devices, cls=EnhancedJSONEncoder, indent=4)
 
         print(data)
 
