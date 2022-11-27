@@ -14,7 +14,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
 from .models.tuya_entity_descriptors import TuyaHumidifierEntityDescription
 
@@ -23,7 +23,7 @@ async def async_setup_entry(
     hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
     """Set up Tuya (de)humidifier dynamically through Tuya discovery."""
-    manager = TuyaDeviceConfigurationManager.get_instance(hass)
+    manager = TuyaConfigurationManager.get_instance(hass)
     await manager.async_setup_entry(Platform.HUMIDIFIER,
                                     entry,
                                     async_add_entities,

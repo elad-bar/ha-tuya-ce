@@ -12,7 +12,21 @@ from homeassistant.const import STATE_IDLE, STATE_PAUSED, Platform
 DOMAIN = "tuya_ce"
 
 DEVICE_CONFIG_MANAGER = "device_config_manager"
-DEVICE_CONFIG_URL = "https://raw.githubusercontent.com/elad-bar/ha-tuya-ce/main/config/tuya.json"
+
+STORAGE_VERSION = 1
+SERVICE_UPDATE_REMOTE_CONFIGURATION = "update_remote_configuration"
+
+BASE_URL = "https://raw.githubusercontent.com/elad-bar/ha-tuya-ce/main/config/"
+
+DEVICES_CONFIG = "device"
+COUNTRIES_CONFIG = "countries"
+DEVICE_CLASS_CONFIG = "device_class"
+
+TUYA_CONFIGURATIONS = [
+    DEVICES_CONFIG,
+    COUNTRIES_CONFIG,
+    DEVICE_CLASS_CONFIG
+]
 
 CONF_AUTH_TYPE = "auth_type"
 CONF_PROJECT_TYPE = "tuya_project_type"

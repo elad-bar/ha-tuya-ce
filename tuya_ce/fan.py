@@ -22,7 +22,7 @@ from homeassistant.util.percentage import (
 
 from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import EnumTypeData, IntegerTypeData, TuyaEntity
 
 
@@ -30,7 +30,7 @@ async def async_setup_entry(
     hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
     """Set up tuya fan dynamically through tuya discovery."""
-    manager = TuyaDeviceConfigurationManager.get_instance(hass)
+    manager = TuyaConfigurationManager.get_instance(hass)
     await manager.async_setup_entry(Platform.FAN,
                                     entry,
                                     async_add_entities,

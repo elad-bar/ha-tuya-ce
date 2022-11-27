@@ -12,12 +12,11 @@ from tuya_iot import (
     TuyaOpenMQ,
 )
 
-from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import device_registry as dr, entity_registry as er
+from homeassistant.helpers.entity_registry import RegistryEntry
 
 from .helpers.const import (
     CONF_ACCESS_ID,
@@ -30,14 +29,15 @@ from .helpers.const import (
     CONF_PROJECT_TYPE,
     CONF_USERNAME,
     DEVICE_CONFIG_MANAGER,
-    DEVICE_CONFIG_URL,
     DOMAIN,
     PLATFORMS,
+    SERVICE_UPDATE_REMOTE_CONFIGURATION,
     TUYA_DISCOVERY_NEW,
     TUYA_HA_SIGNAL_UPDATE_ENTITY,
 )
 from .helpers.enums.dp_code import DPCode
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .helpers.tuya_legacy_mapping import TUYA_LEGACY_CATEGORIES, TUYA_LEGACY_MAPPING
+from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .managers.tuya_device_listener import DeviceListener
 from .models.ha_tuya_data import HomeAssistantTuyaData
 
@@ -48,11 +48,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Async setup hass config entry."""
     hass.data.setdefault(DOMAIN, {})
 
-    if DEVICE_CONFIG_MANAGER not in hass.data[DOMAIN]:
-        tuya_config_manager = TuyaDeviceConfigurationManager(hass)
-        await tuya_config_manager.initialize()
-
-        hass.data[DOMAIN][DEVICE_CONFIG_MANAGER] = tuya_config_manager
+    await TuyaConfigurationManager.load(hass)
 
     # Project type has been renamed to auth type in the upstream Tuya IoT SDK.
     # This migrates existing config entries to reflect that name change.
@@ -146,75 +142,30 @@ def async_migrate_entities_unique_ids(
 ) -> None:
     """Migrate unique_ids in the entity registry to the new format."""
     entity_registry = er.async_get(hass)
-    registry_entries = er.async_entries_for_config_entry(
-        entity_registry, config_entry.entry_id
-    )
-    light_entries = {
+    registry_entries = er.async_entries_for_config_entry(entity_registry, config_entry.entry_id)
+
+    entries = {
         entry.unique_id: entry
         for entry in registry_entries
-        if entry.domain == LIGHT_DOMAIN
-    }
-    switch_entries = {
-        entry.unique_id: entry
-        for entry in registry_entries
-        if entry.domain == SWITCH_DOMAIN
+        if entry.domain in TUYA_LEGACY_MAPPING
     }
 
     for device in device_manager.device_map.values():
-        # Old lights where in `tuya.{device_id}` format, now the DPCode is added.
-        #
-        # If the device is a previously supported light category and still has
-        # the old format for the unique ID, migrate it to the new format.
-        #
-        # Previously only devices providing the SWITCH_LED DPCode were supported,
-        # thus this can be added to those existing IDs.
-        #
-        # `tuya.{device_id}` -> `tuya.{device_id}{SWITCH_LED}`
-        if (
-            device.category in ("dc", "dd", "dj", "fs", "fwl", "jsq", "xdd", "xxj")
-            and (entry := light_entries.get(f"tuya.{device.id}"))
-            and f"tuya.{device.id}{DPCode.SWITCH_LED}" not in light_entries
-        ):
-            entity_registry.async_update_entity(
-                entry.entity_id, new_unique_id=f"tuya.{device.id}{DPCode.SWITCH_LED}"
-            )
+        tuya_device_id = f"tuya.{device.id}"
 
-        # Old switches has different formats for the unique ID, but is mappable.
-        #
-        # If the device is a previously supported switch category and still has
-        # the old format for the unique ID, migrate it to the new format.
-        #
-        # `tuya.{device_id}` -> `tuya.{device_id}{SWITCH}`
-        # `tuya.{device_id}_1` -> `tuya.{device_id}{SWITCH_1}`
-        # ...
-        # `tuya.{device_id}_6` -> `tuya.{device_id}{SWITCH_6}`
-        # `tuya.{device_id}_usb1` -> `tuya.{device_id}{SWITCH_USB1}`
-        # ...
-        # `tuya.{device_id}_usb6` -> `tuya.{device_id}{SWITCH_USB6}`
-        #
-        # In all other cases, the unique ID is not changed.
-        if device.category in ("bh", "cwysj", "cz", "dlq", "kg", "kj", "pc", "xxj"):
-            for postfix, dpcode in (
-                ("", DPCode.SWITCH),
-                ("_1", DPCode.SWITCH_1),
-                ("_2", DPCode.SWITCH_2),
-                ("_3", DPCode.SWITCH_3),
-                ("_4", DPCode.SWITCH_4),
-                ("_5", DPCode.SWITCH_5),
-                ("_6", DPCode.SWITCH_6),
-                ("_usb1", DPCode.SWITCH_USB1),
-                ("_usb2", DPCode.SWITCH_USB2),
-                ("_usb3", DPCode.SWITCH_USB3),
-                ("_usb4", DPCode.SWITCH_USB4),
-                ("_usb5", DPCode.SWITCH_USB5),
-                ("_usb6", DPCode.SWITCH_USB6),
-            ):
-                if (
-                    entry := switch_entries.get(f"tuya.{device.id}{postfix}")
-                ) and f"tuya.{device.id}{dpcode}" not in switch_entries:
-                    entity_registry.async_update_entity(
-                        entry.entity_id, new_unique_id=f"tuya.{device.id}{dpcode}"
-                    )
+        domain = TUYA_LEGACY_CATEGORIES.get(device.category)
+        legacy_mapping = TUYA_LEGACY_MAPPING.get(domain, {})
+
+        for key in legacy_mapping:
+            dp_code = legacy_mapping.get(key)
+
+            legacy_unique_id = f"{tuya_device_id}{key}"
+            new_unique_id = f"{tuya_device_id}{dp_code}"
+
+            entry: RegistryEntry | None = entries.get(legacy_unique_id)
+
+            if entry is not None and new_unique_id not in entries:
+                entity_registry.async_update_entity(entry.entity_id, new_unique_id=new_unique_id)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

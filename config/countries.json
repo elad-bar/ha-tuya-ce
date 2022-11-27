@@ -1,0 +1,1202 @@
+[
+    {
+        "name": "Afghanistan",
+        "country_code": "93",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Albania",
+        "country_code": "355",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Algeria",
+        "country_code": "213",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "American Samoa",
+        "country_code": "1-684",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Andorra",
+        "country_code": "376",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Angola",
+        "country_code": "244",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Anguilla",
+        "country_code": "1-264",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Antarctica",
+        "country_code": "672",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Antigua and Barbuda",
+        "country_code": "1-268",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Argentina",
+        "country_code": "54",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Armenia",
+        "country_code": "374",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Aruba",
+        "country_code": "297",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Australia",
+        "country_code": "61",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Austria",
+        "country_code": "43",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Azerbaijan",
+        "country_code": "994",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Bahamas",
+        "country_code": "1-242",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Bahrain",
+        "country_code": "973",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Bangladesh",
+        "country_code": "880",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Barbados",
+        "country_code": "1-246",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Belarus",
+        "country_code": "375",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Belgium",
+        "country_code": "32",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Belize",
+        "country_code": "501",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Benin",
+        "country_code": "229",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Bermuda",
+        "country_code": "1-441",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Bhutan",
+        "country_code": "975",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Bolivia",
+        "country_code": "591",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "country_code": "387",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Botswana",
+        "country_code": "267",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Brazil",
+        "country_code": "55",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "British Indian Ocean Territory",
+        "country_code": "246",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "British Virgin Islands",
+        "country_code": "1-284",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Brunei",
+        "country_code": "673",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Bulgaria",
+        "country_code": "359",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Burkina Faso",
+        "country_code": "226",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Burundi",
+        "country_code": "257",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Cambodia",
+        "country_code": "855",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Cameroon",
+        "country_code": "237",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Canada",
+        "country_code": "1",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Capo Verde",
+        "country_code": "238",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Cayman Islands",
+        "country_code": "1-345",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Central African Republic",
+        "country_code": "236",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Chad",
+        "country_code": "235",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Chile",
+        "country_code": "56",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "China",
+        "country_code": "86",
+        "endpoint": "https://openapi.tuyacn.com"
+    },
+    {
+        "name": "Christmas Island",
+        "country_code": "61",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Cocos Islands",
+        "country_code": "61",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Colombia",
+        "country_code": "57",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Comoros",
+        "country_code": "269",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Cook Islands",
+        "country_code": "682",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Costa Rica",
+        "country_code": "506",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Croatia",
+        "country_code": "385",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Cuba",
+        "country_code": "53",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Curacao",
+        "country_code": "599",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Cyprus",
+        "country_code": "357",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Czech Republic",
+        "country_code": "420",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Democratic Republic of the Congo",
+        "country_code": "243",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Denmark",
+        "country_code": "45",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Djibouti",
+        "country_code": "253",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Dominica",
+        "country_code": "1-767",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Dominican Republic",
+        "country_code": "1-809",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "East Timor",
+        "country_code": "670",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Ecuador",
+        "country_code": "593",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Egypt",
+        "country_code": "20",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "El Salvador",
+        "country_code": "503",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Equatorial Guinea",
+        "country_code": "240",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Eritrea",
+        "country_code": "291",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Estonia",
+        "country_code": "372",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Ethiopia",
+        "country_code": "251",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Falkland Islands",
+        "country_code": "500",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Faroe Islands",
+        "country_code": "298",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Fiji",
+        "country_code": "679",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Finland",
+        "country_code": "358",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "France",
+        "country_code": "33",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "French Polynesia",
+        "country_code": "689",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Gabon",
+        "country_code": "241",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Gambia",
+        "country_code": "220",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Georgia",
+        "country_code": "995",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Germany",
+        "country_code": "49",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Ghana",
+        "country_code": "233",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Gibraltar",
+        "country_code": "350",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Greece",
+        "country_code": "30",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Greenland",
+        "country_code": "299",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Grenada",
+        "country_code": "1-473",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Guam",
+        "country_code": "1-671",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Guatemala",
+        "country_code": "502",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Guernsey",
+        "country_code": "44-1481",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Guinea",
+        "country_code": "224",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Guinea-Bissau",
+        "country_code": "245",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Guyana",
+        "country_code": "592",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Haiti",
+        "country_code": "509",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Honduras",
+        "country_code": "504",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Hong Kong",
+        "country_code": "852",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Hungary",
+        "country_code": "36",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Iceland",
+        "country_code": "354",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "India",
+        "country_code": "91",
+        "endpoint": "https://openapi.tuyain.com"
+    },
+    {
+        "name": "Indonesia",
+        "country_code": "62",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Iran",
+        "country_code": "98",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Iraq",
+        "country_code": "964",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Ireland",
+        "country_code": "353",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Isle of Man",
+        "country_code": "44-1624",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Israel",
+        "country_code": "972",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Italy",
+        "country_code": "39",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Ivory Coast",
+        "country_code": "225",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Jamaica",
+        "country_code": "1-876",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Japan",
+        "country_code": "81",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Jersey",
+        "country_code": "44-1534",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Jordan",
+        "country_code": "962",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Kazakhstan",
+        "country_code": "7",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Kenya",
+        "country_code": "254",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Kiribati",
+        "country_code": "686",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Kosovo",
+        "country_code": "383",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Kuwait",
+        "country_code": "965",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Kyrgyzstan",
+        "country_code": "996",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Laos",
+        "country_code": "856",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Latvia",
+        "country_code": "371",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Lebanon",
+        "country_code": "961",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Lesotho",
+        "country_code": "266",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Liberia",
+        "country_code": "231",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Libya",
+        "country_code": "218",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Liechtenstein",
+        "country_code": "423",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Lithuania",
+        "country_code": "370",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Luxembourg",
+        "country_code": "352",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Macao",
+        "country_code": "853",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Macedonia",
+        "country_code": "389",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Madagascar",
+        "country_code": "261",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Malawi",
+        "country_code": "265",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Malaysia",
+        "country_code": "60",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Maldives",
+        "country_code": "960",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Mali",
+        "country_code": "223",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Malta",
+        "country_code": "356",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Marshall Islands",
+        "country_code": "692",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Mauritania",
+        "country_code": "222",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Mauritius",
+        "country_code": "230",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Mayotte",
+        "country_code": "262",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Mexico",
+        "country_code": "52",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Micronesia",
+        "country_code": "691",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Moldova",
+        "country_code": "373",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Monaco",
+        "country_code": "377",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Mongolia",
+        "country_code": "976",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Montenegro",
+        "country_code": "382",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Montserrat",
+        "country_code": "1-664",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Morocco",
+        "country_code": "212",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Mozambique",
+        "country_code": "258",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Myanmar",
+        "country_code": "95",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Namibia",
+        "country_code": "264",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Nauru",
+        "country_code": "674",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Nepal",
+        "country_code": "977",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Netherlands",
+        "country_code": "31",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Netherlands Antilles",
+        "country_code": "599",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "New Caledonia",
+        "country_code": "687",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "New Zealand",
+        "country_code": "64",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Nicaragua",
+        "country_code": "505",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Niger",
+        "country_code": "227",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Nigeria",
+        "country_code": "234",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Niue",
+        "country_code": "683",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "North Korea",
+        "country_code": "850",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Northern Mariana Islands",
+        "country_code": "1-670",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Norway",
+        "country_code": "47",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Oman",
+        "country_code": "968",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Pakistan",
+        "country_code": "92",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Palau",
+        "country_code": "680",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Palestine",
+        "country_code": "970",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Panama",
+        "country_code": "507",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Papua New Guinea",
+        "country_code": "675",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Paraguay",
+        "country_code": "595",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Peru",
+        "country_code": "51",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Philippines",
+        "country_code": "63",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Pitcairn",
+        "country_code": "64",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Poland",
+        "country_code": "48",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Portugal",
+        "country_code": "351",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Puerto Rico",
+        "country_code": "1-787, 1-939",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Qatar",
+        "country_code": "974",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Republic of the Congo",
+        "country_code": "242",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Reunion",
+        "country_code": "262",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Romania",
+        "country_code": "40",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Russia",
+        "country_code": "7",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Rwanda",
+        "country_code": "250",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Saint Barthelemy",
+        "country_code": "590",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Saint Helena",
+        "country_code": "290",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Saint Kitts and Nevis",
+        "country_code": "1-869",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Saint Lucia",
+        "country_code": "1-758",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Saint Martin",
+        "country_code": "590",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Saint Pierre and Miquelon",
+        "country_code": "508",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Saint Vincent and the Grenadines",
+        "country_code": "1-784",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Samoa",
+        "country_code": "685",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "San Marino",
+        "country_code": "378",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Sao Tome and Principe",
+        "country_code": "239",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Saudi Arabia",
+        "country_code": "966",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Senegal",
+        "country_code": "221",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Serbia",
+        "country_code": "381",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Seychelles",
+        "country_code": "248",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Sierra Leone",
+        "country_code": "232",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Singapore",
+        "country_code": "65",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Sint Maarten",
+        "country_code": "1-721",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Slovakia",
+        "country_code": "421",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Slovenia",
+        "country_code": "386",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Solomon Islands",
+        "country_code": "677",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Somalia",
+        "country_code": "252",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "South Africa",
+        "country_code": "27",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "South Korea",
+        "country_code": "82",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "South Sudan",
+        "country_code": "211",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Spain",
+        "country_code": "34",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Sri Lanka",
+        "country_code": "94",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Sudan",
+        "country_code": "249",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Suriname",
+        "country_code": "597",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Svalbard and Jan Mayen",
+        "country_code": "4779",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Swaziland",
+        "country_code": "268",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Sweden",
+        "country_code": "46",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Switzerland",
+        "country_code": "41",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Syria",
+        "country_code": "963",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Taiwan",
+        "country_code": "886",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Tajikistan",
+        "country_code": "992",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Tanzania",
+        "country_code": "255",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Thailand",
+        "country_code": "66",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Togo",
+        "country_code": "228",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Tokelau",
+        "country_code": "690",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Tonga",
+        "country_code": "676",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Trinidad and Tobago",
+        "country_code": "1-868",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Tunisia",
+        "country_code": "216",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Turkey",
+        "country_code": "90",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Turkmenistan",
+        "country_code": "993",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Turks and Caicos Islands",
+        "country_code": "1-649",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Tuvalu",
+        "country_code": "688",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "U.S. Virgin Islands",
+        "country_code": "1-340",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Uganda",
+        "country_code": "256",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Ukraine",
+        "country_code": "380",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "United Arab Emirates",
+        "country_code": "971",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "United Kingdom",
+        "country_code": "44",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "United States",
+        "country_code": "1",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Uruguay",
+        "country_code": "598",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Uzbekistan",
+        "country_code": "998",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Vanuatu",
+        "country_code": "678",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Vatican",
+        "country_code": "379",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Venezuela",
+        "country_code": "58",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Vietnam",
+        "country_code": "84",
+        "endpoint": "https://openapi.tuyaus.com"
+    },
+    {
+        "name": "Wallis and Futuna",
+        "country_code": "681",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Western Sahara",
+        "country_code": "212",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Yemen",
+        "country_code": "967",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Zambia",
+        "country_code": "260",
+        "endpoint": "https://openapi.tuyaeu.com"
+    },
+    {
+        "name": "Zimbabwe",
+        "country_code": "263",
+        "endpoint": "https://openapi.tuyaeu.com"
+    }
+]

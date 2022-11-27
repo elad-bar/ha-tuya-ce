@@ -28,7 +28,7 @@ from .helpers.const import (
     TUYA_RESPONSE_SUCCESS,
     TUYA_SMART_APP,
 )
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .managers.tuya_configuration_manager import TuyaConfigurationManager
 
 _LOGGER = logging.getLogger(__package__)
 
@@ -37,7 +37,7 @@ class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Tuya Config Flow."""
 
     @property
-    def tuya_device_configuration_manager(self) -> TuyaDeviceConfigurationManager:
+    def tuya_device_configuration_manager(self) -> TuyaConfigurationManager:
         integration_data = self.hass.data[DOMAIN]
         manager = integration_data.get(DEVICE_CONFIG_MANAGER)
 

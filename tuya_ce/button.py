@@ -9,7 +9,7 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import TuyaEntity
 
 
@@ -17,7 +17,7 @@ async def async_setup_entry(
     hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
     """Set up Tuya buttons dynamically through Tuya discovery."""
-    manager = TuyaDeviceConfigurationManager.get_instance(hass)
+    manager = TuyaConfigurationManager.get_instance(hass)
     await manager.async_setup_entry(Platform.BUTTON,
                                     entry,
                                     async_add_entities,

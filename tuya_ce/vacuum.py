@@ -14,7 +14,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from .helpers.const import TUYA_MODE_RETURN_HOME, TUYA_STATUS_TO_HA
 from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
-from .managers.tuya_device_configuration_manager import TuyaDeviceConfigurationManager
+from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import EnumTypeData, IntegerTypeData, TuyaEntity
 
 
@@ -22,7 +22,7 @@ async def async_setup_entry(
     hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
     """Set up Tuya vacuum dynamically through Tuya discovery."""
-    manager = TuyaDeviceConfigurationManager.get_instance(hass)
+    manager = TuyaConfigurationManager.get_instance(hass)
     await manager.async_setup_entry(Platform.VACUUM,
                                     entry,
                                     async_add_entities,
