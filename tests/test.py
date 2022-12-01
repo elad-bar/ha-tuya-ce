@@ -577,7 +577,7 @@ class Test:
             Platform.SELECT: PlatformFields.SELECT,
             Platform.SENSOR: PlatformFields.SENSOR,
             Platform.SIREN: PlatformFields.SIREN,
-            Platform.SWITCH: PlatformFields.SWITCH
+            Platform.SWITCH: PlatformFields.SWITCH,
         }
 
         devices = {}
@@ -593,7 +593,9 @@ class Test:
 
                 domain_fields = platform_fields.get(domain, [])
 
-                device_category_items_json = json.dumps(device_category_items, cls=EnhancedJSONEncoder, indent=4)
+                device_category_items_json = json.dumps(
+                    device_category_items, cls=EnhancedJSONEncoder, indent=4
+                )
                 objs = json.loads(device_category_items_json)
 
                 if not isinstance(objs, list):
@@ -604,7 +606,9 @@ class Test:
 
                     for field in keys:
                         value = obj[field]
-                        if (field not in domain_fields or value is None) and field != "key":
+                        if (
+                            field not in domain_fields or value is None
+                        ) and field != "key":
                             del obj[field]
 
                 devices[device_category_key][domain] = objs
@@ -618,6 +622,7 @@ class Test:
 
                 devices[device_category_key][domain] = True
 
+        """
         countries = Countries.all
         device_class_mapping = TuyaUnits().device_class_mapping
 
@@ -626,7 +631,7 @@ class Test:
             # "countries": countries,
             # "device_class": device_class_mapping,
         }
-
+        """
         data = json.dumps(devices, cls=EnhancedJSONEncoder, indent=4)
 
         print(data)

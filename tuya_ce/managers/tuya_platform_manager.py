@@ -15,9 +15,10 @@ from homeassistant.components.siren import SirenEntityDescription
 from homeassistant.components.switch import SwitchEntityDescription
 from homeassistant.const import Platform
 from homeassistant.helpers.entity import EntityDescription
-from tuya_ce.models.color_type_data import ColorTypes
-from tuya_ce.models.platform_fields import PlatformFields
-from tuya_ce.models.tuya_entity_descriptors import (
+
+from ..models.color_type_data import ColorTypes
+from ..models.platform_fields import PlatformFields
+from ..models.tuya_entity_descriptors import (
     TuyaBinarySensorEntityDescription,
     TuyaClimateEntityDescription,
     TuyaCoverEntityDescription,
@@ -25,7 +26,7 @@ from tuya_ce.models.tuya_entity_descriptors import (
     TuyaLightEntityDescription,
     TuyaSensorEntityDescription,
 )
-from tuya_ce.models.tuya_platform import TuyaPlatform
+from ..models.tuya_platform import TuyaPlatform
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -33,10 +34,18 @@ _LOGGER = logging.getLogger(__name__)
 class TuyaPlatformManager:
     _platforms: dict[str, TuyaPlatform]
     _entity_description_defaults = dict[str, Any]
+    _simple_platforms: list[str]
 
     def __init__(self):
         self._platforms = self._get_platforms()
         self._entity_description_defaults = self._get_entity_description_defaults()
+        self._simple_platforms = []
+
+        self._set_simple_platforms()
+
+    @property
+    def simple_platforms(self) -> list[str]:
+        return self._simple_platforms
 
     def is_enabled(self,
                    platform: str,
@@ -54,18 +63,29 @@ class TuyaPlatformManager:
 
         return result
 
+    def _set_simple_platforms(self):
+        for platform_name in self._platforms:
+            platform = self._platforms.get(platform_name)
+            if platform.get_entity_description is None and  platform_name not in self._simple_platforms:
+                self._simple_platforms.append(platform_name)
+
     def get_entity_description(self,
                                platform: str,
                                data: dict) -> EntityDescription | None:
 
-        result = None
+        entity_description = None
         platform_config = self._platforms.get(platform)
 
         if platform_config is None:
             _LOGGER.warning(f"Platform {platform} configuration was not found")
 
         else:
-            if platform_config.get_entity_description is not None:
+            if platform_config.get_entity_description is None:
+                _LOGGER.debug(f"Loading platform {platform} without entity description")
+
+            else:
+                _LOGGER.debug(f"Loading platform {platform} with entity description, Details: {data}")
+
                 entity_description = platform_config.get_entity_description(data)
 
                 for key in platform_config.fields:
@@ -77,7 +97,7 @@ class TuyaPlatformManager:
                     if hasattr(entity_description, key):
                         setattr(entity_description, key, value)
 
-        return result
+        return entity_description
 
     @staticmethod
     def _get_entity_description_defaults() -> dict[str, Any]:
@@ -177,6 +197,8 @@ class TuyaPlatformManager:
         entity_description = AlarmControlPanelEntityDescription(
             key=entity_config.get("key")
         )
+
+        _LOGGER.info(f"_get_alarm_control_panel_entity, Entity description: {entity_description}, entity: {entity_config}")
 
         return entity_description
 

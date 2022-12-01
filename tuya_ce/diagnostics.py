@@ -1,6 +1,7 @@
 """Diagnostics support for Tuya."""
 from __future__ import annotations
 
+import asyncio
 from contextlib import suppress
 import json
 from typing import Any, cast
@@ -14,6 +15,7 @@ from homeassistant.helpers import device_registry as dr, entity_registry as er
 from homeassistant.helpers.device_registry import DeviceEntry
 from homeassistant.util import dt as dt_util
 
+from . import TuyaConfigurationManager
 from .helpers.const import (
     CONF_APP_TYPE,
     CONF_AUTH_TYPE,
@@ -29,19 +31,24 @@ async def async_get_config_entry_diagnostics(
     hass: HomeAssistant, entry: ConfigEntry
 ) -> dict[str, Any]:
     """Return diagnostics for a config entry."""
-    return _async_get_diagnostics(hass, entry)
+    tuya_manager = await TuyaConfigurationManager.load(hass)
+
+    return _async_get_diagnostics(hass, tuya_manager, entry)
 
 
 async def async_get_device_diagnostics(
     hass: HomeAssistant, entry: ConfigEntry, device: DeviceEntry
 ) -> dict[str, Any]:
     """Return diagnostics for a device entry."""
-    return _async_get_diagnostics(hass, entry, device)
+    tuya_manager = await TuyaConfigurationManager.load(hass)
+
+    return _async_get_diagnostics(hass, tuya_manager, entry, device)
 
 
 @callback
 def _async_get_diagnostics(
     hass: HomeAssistant,
+    tuya_manager: TuyaConfigurationManager,
     entry: ConfigEntry,
     device: DeviceEntry | None = None,
 ) -> dict[str, Any]:
@@ -74,6 +81,8 @@ def _async_get_diagnostics(
                 for device in hass_data.device_manager.device_map.values()
             ]
         )
+
+    tuya_manager.perform_gap_analysis(data)
 
     return data
 

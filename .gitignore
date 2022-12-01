@@ -65,3 +65,4 @@ venv/
 
 __test__.py
 **/__pycache_/
+config/ha.json

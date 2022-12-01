@@ -18,7 +18,7 @@ SERVICE_UPDATE_REMOTE_CONFIGURATION = "update_remote_configuration"
 
 BASE_URL = "https://raw.githubusercontent.com/elad-bar/ha-tuya-ce/main/config/"
 
-DEVICES_CONFIG = "device"
+DEVICES_CONFIG = "devices"
 COUNTRIES_CONFIG = "countries"
 DEVICE_CLASS_CONFIG = "device_class"
 
@@ -106,3 +106,40 @@ TUYA_HVAC_TO_HA = {
     "wet": HVACMode.DRY,
     "wind": HVACMode.FAN_ONLY,
 }
+
+TUYA_SPECIAL_MAPPING = {
+    "infrared_ac": {
+        "F": "wind",
+        "M": "mode",
+        "T": "temp"
+    }
+}
+
+TUYA_RELATED_DOMAINS = {
+    "sensor": ["binary_sensor"],
+    "select": ["binary_sensor", "sensor"]
+}
+
+TUYA_TYPES_MAPPING = {
+    "ro_boolean": "binary_sensor",
+    "rw_boolean": "switch",
+
+    "ro_integer": "sensor",
+    "rw_integer": "number",
+
+    "ro_string": "sensor",
+    "rw_string": "select",
+
+    "ro_enum": "sensor",
+    "rw_enum": "select",
+
+    "ro_json": "sensor",
+    "rw_json": "select"
+}
+
+ACCESS_MODES = {
+    True: "ro",
+    False: "rw"
+}
+
+TUYA_UNSUPPORTED_CATEGORIES_DATA_KEYS = ["name", "model", "product_name"]
