@@ -17,6 +17,7 @@ class TuyaDeviceClass(StrEnum):
     HUMIDIFIER_LEVEL = "tuya__humidifier_level"
     HUMIDIFIER_MOODLIGHTING = "tuya__humidifier_moodlighting"
     IPC_WORK_MODE = "tuya__ipc_work_mode"
+    IRRIGATION_MODE = "tuya__irrigation_mode"
     LED_TYPE = "tuya__led_type"
     LIGHT_MODE = "tuya__light_mode"
     MOTION_SENSITIVITY = "tuya__motion_sensitivity"
@@ -26,3 +27,4 @@ class TuyaDeviceClass(StrEnum):
     VACUUM_CISTERN = "tuya__vacuum_cistern"
     VACUUM_COLLECTION = "tuya__vacuum_collection"
     VACUUM_MODE = "tuya__vacuum_mode"
+    WEATHER_CONDITION = "tuya__weather_condition"

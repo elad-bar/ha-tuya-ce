@@ -1,6 +1,8 @@
 """Support for Tuya number."""
 from __future__ import annotations
 
+from abc import ABC
+
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.number import NumberEntity, NumberEntityDescription
@@ -26,7 +28,7 @@ async def async_setup_entry(
                                     TuyaNumberEntity.create_entity)
 
 
-class TuyaNumberEntity(TuyaEntity, NumberEntity):
+class TuyaNumberEntity(TuyaEntity, NumberEntity, ABC):
     """Tuya Number Entity."""
 
     _number: IntegerTypeData | None = None
@@ -63,12 +65,12 @@ class TuyaNumberEntity(TuyaEntity, NumberEntity):
             # device class cannot be found in the validation mapping.
             if (
                 self.native_unit_of_measurement is None
-                or self.device_class not in DEVICE_CLASS_UNITS
+                or self.device_class not in self.tuya_device_configuration_manager
             ):
                 self._attr_device_class = None
                 return
 
-            uoms = DEVICE_CLASS_UNITS[self.device_class]
+            uoms = self.tuya_device_configuration_manager[self.device_class]
             self._uom = uoms.get(self.native_unit_of_measurement) or uoms.get(
                 self.native_unit_of_measurement.lower()
             )
@@ -96,6 +98,12 @@ class TuyaNumberEntity(TuyaEntity, NumberEntity):
         instance = TuyaNumberEntity(hass, device, device_manager, description)
 
         return instance
+
+    @property
+    def device_classes(self) -> dict:
+        device_classes = self.tuya_device_configuration_manager.units
+
+        return device_classes
 
     @property
     def native_value(self) -> float | None:

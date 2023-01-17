@@ -67,7 +67,7 @@ class TuyaLightEntityDescription(LightEntityDescription):
 
 
 @dataclass
-class TuyaSensorEntityDescription(SensorEntityDescription):
+class TuyaSensorEntityDescription1(SensorEntityDescription):
     """Describes Tuya sensor entity."""
 
     subkey: str | None = None

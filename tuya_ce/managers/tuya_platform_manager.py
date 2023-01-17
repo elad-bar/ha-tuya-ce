@@ -13,19 +13,19 @@ from homeassistant.components.number import NumberEntityDescription
 from homeassistant.components.select import SelectEntityDescription
 from homeassistant.components.siren import SirenEntityDescription
 from homeassistant.components.switch import SwitchEntityDescription
+from homeassistant.components.tuya.binary_sensor import (
+    TuyaBinarySensorEntityDescription,
+)
+from homeassistant.components.tuya.climate import TuyaClimateEntityDescription
+from homeassistant.components.tuya.cover import TuyaCoverEntityDescription
+from homeassistant.components.tuya.humidifier import TuyaHumidifierEntityDescription
+from homeassistant.components.tuya.light import TuyaLightEntityDescription
+from homeassistant.components.tuya.sensor import TuyaSensorEntityDescription
 from homeassistant.const import Platform
 from homeassistant.helpers.entity import EntityDescription
 
 from ..models.color_type_data import ColorTypes
 from ..models.platform_fields import PlatformFields
-from ..models.tuya_entity_descriptors import (
-    TuyaBinarySensorEntityDescription,
-    TuyaClimateEntityDescription,
-    TuyaCoverEntityDescription,
-    TuyaHumidifierEntityDescription,
-    TuyaLightEntityDescription,
-    TuyaSensorEntityDescription,
-)
 from ..models.tuya_platform import TuyaPlatform
 
 _LOGGER = logging.getLogger(__name__)

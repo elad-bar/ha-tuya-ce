@@ -1,7 +1,7 @@
 pre-commit
-homeassistant~=2022.11.4
+homeassistant~=2023.1.4
 voluptuous~=0.13.1
-aiohttp
+aiohttp~=3.8.1
 cryptography
 numpy
 ffmpeg

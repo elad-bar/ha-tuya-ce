@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from homeassistant.components.tuya.const import UnitOfMeasurement
 from homeassistant.const import (
     CONCENTRATION_MICROGRAMS_PER_CUBIC_METER,
     CONCENTRATION_MILLIGRAMS_PER_CUBIC_METER,
@@ -11,11 +12,12 @@ from homeassistant.const import (
     ELECTRIC_CURRENT_MILLIAMPERE,
     ELECTRIC_POTENTIAL_MILLIVOLT,
     ELECTRIC_POTENTIAL_VOLT,
+    UnitOfMass,
 )
 
 
 @dataclass
-class UnitOfMeasurement:
+class ExtendedUnitOfMeasurement:
     """Describes a unit of measurement."""
 
     unit: str
@@ -47,6 +49,9 @@ class UnitOfMeasurement:
 
             f"{ELECTRIC_POTENTIAL_MILLIVOLT}_{ELECTRIC_POTENTIAL_VOLT}":
                 lambda x: x / 1000,
+
+            f"{UnitOfMass.GRAMS}_{UnitOfMass.KILOGRAMS}":
+                lambda x: x / 1000,
         }
 
     @staticmethod
@@ -56,7 +61,18 @@ class UnitOfMeasurement:
         aliases: list[str] | None = data.get("aliases")
         conversion_unit: str | None = data.get("conversion_unit")
 
-        instance = UnitOfMeasurement(unit, device_classes, aliases, conversion_unit)
+        instance = ExtendedUnitOfMeasurement(unit, device_classes, aliases, conversion_unit)
+
+        return instance
+
+    @staticmethod
+    def from_ha_unit(data: UnitOfMeasurement):
+        unit: str = data.unit
+        device_classes: list[str] = list(data.device_classes)
+        aliases: list[str] | None = list(data.aliases)
+        conversion_unit: str | None = data.conversion_unit
+
+        instance = ExtendedUnitOfMeasurement(unit, device_classes, aliases, conversion_unit)
 
         return instance
 

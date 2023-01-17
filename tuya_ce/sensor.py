@@ -5,6 +5,7 @@ from tuya_iot import TuyaDevice, TuyaDeviceManager
 from tuya_iot.device import TuyaDeviceStatusRange
 
 from homeassistant.components.sensor import SensorEntity
+from homeassistant.components.tuya.sensor import TuyaSensorEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
@@ -16,8 +17,7 @@ from .helpers.enums.dp_code import DPCode
 from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import ElectricityTypeData, EnumTypeData, IntegerTypeData, TuyaEntity
-from .models.tuya_entity_descriptors import TuyaSensorEntityDescription
-from .models.unit_of_measurement import UnitOfMeasurement
+from .models.unit_of_measurement import ExtendedUnitOfMeasurement, UnitOfMeasurement
 
 
 async def async_setup_entry(
@@ -100,7 +100,7 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
                 return
 
             else:
-                self._uom = UnitOfMeasurement.from_dict(uom)
+                self._uom = ExtendedUnitOfMeasurement.from_dict(uom)
 
             # If we still have a device class, we should not use an icon
             if self.device_class:
@@ -123,7 +123,7 @@ class TuyaSensorEntity(TuyaEntity, SensorEntity):
 
     @property
     def device_classes(self) -> dict:
-        device_classes = self.tuya_device_configuration_manager.device_classes
+        device_classes = self.tuya_device_configuration_manager.units
 
         return device_classes
 

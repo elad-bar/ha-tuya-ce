@@ -20,12 +20,12 @@ BASE_URL = "https://raw.githubusercontent.com/elad-bar/ha-tuya-ce/main/config/"
 
 DEVICES_CONFIG = "devices"
 COUNTRIES_CONFIG = "countries"
-DEVICE_CLASS_CONFIG = "device_class"
+UNITS_CONFIG = "units"
 
 TUYA_CONFIGURATIONS = [
     DEVICES_CONFIG,
     COUNTRIES_CONFIG,
-    DEVICE_CLASS_CONFIG
+    UNITS_CONFIG
 ]
 
 CONF_AUTH_TYPE = "auth_type"
@@ -49,6 +49,8 @@ TUYA_RESPONSE_PLATFORM_URL = "platform_url"
 
 TUYA_SMART_APP = "tuyaSmart"
 SMARTLIFE_APP = "smartlife"
+
+ELECTRIC_RESISTANCE_OHM = "Ω"
 
 PLATFORMS = [
     Platform.ALARM_CONTROL_PANEL,

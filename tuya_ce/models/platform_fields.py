@@ -26,10 +26,10 @@ class PlatformFields:
     NUMBER = ["name", "device_class", "entity_category", "icon",
               "native_unit_of_measurement"]
 
-    SELECT = ["name", "device_class", "entity_category", "icon"]
+    SELECT = ["name", "entity_category", "icon", "translation_key"]
 
     SENSOR = ["name", "device_class", "state_class", "entity_category",
-              "icon", "native_unit_of_measurement", "entity_registry_enabled_default", "subkey"]
+              "icon", "native_unit_of_measurement", "entity_registry_enabled_default", "subkey", "translation_key"]
 
     SIREN = ["name"]
 

@@ -17,6 +17,14 @@ class DPCode(StrEnum):
     ANION = "anion"  # Ionizer unit
     ARM_DOWN_PERCENT = "arm_down_percent"
     ARM_UP_PERCENT = "arm_up_percent"
+    AREA_1 = "areaone"
+    AREA_2 = "areatwo"
+    AREA_3 = "areathree"
+    AREA_4 = "areafour"
+    AREA_5 = "areafive"
+    AREA_6 = "areasix"
+    AREA_7 = "areaseven"
+    AREA_8 = "areaeight"
     BASIC_ANTI_FLICKER = "basic_anti_flicker"
     BASIC_DEVICE_VOLUME = "basic_device_volume"
     BASIC_FLIP = "basic_flip"
@@ -28,6 +36,7 @@ class DPCode(StrEnum):
     BATTERY_PERCENTAGE = "battery_percentage"  # Battery percentage
     BATTERY_STATE = "battery_state"  # Battery state
     BATTERY_VALUE = "battery_value"  # Battery value
+    BODY_RESISTANCE = "BR"
     BRIGHT_CONTROLLER = "bright_controller"
     BRIGHT_STATE = "bright_state"  # Brightness status
     BRIGHT_VALUE = "bright_value"  # Brightness
@@ -122,6 +131,8 @@ class DPCode(StrEnum):
     LED_TYPE_1 = "led_type_1"
     LED_TYPE_2 = "led_type_2"
     LED_TYPE_3 = "led_type_3"
+    LEFT_HAND_RESISTANCE = "LResistance"
+    LEFT_LEG_RESISTANCE = "LLR"
     LEVEL = "level"
     LEVEL_CURRENT = "level_current"
     LIGHT = "light"  # Light
@@ -175,6 +186,8 @@ class DPCode(StrEnum):
     RESET_FILTER = "reset_filter"
     RESET_MAP = "reset_map"
     RESET_ROLL_BRUSH = "reset_roll_brush"
+    RIGHT_HAND_RESISTANCE = "RHR"
+    RIGHT_LEG_RESISTANCE = "RLR"
     ROLL_BRUSH = "roll_brush"
     SEEK = "seek"
     SENSITIVITY = "sensitivity"  # Sensitivity
@@ -186,7 +199,7 @@ class DPCode(StrEnum):
     SITUATION_SET = "situation_set"
     SLEEP = "sleep"  # Sleep function
     SLOW_FEED = "slow_feed"
-    SMART_WEATHER = "smart_weather"  # Water level
+    SMART_WEATHER = "smart_weather"
     SMOKE_SENSOR_STATE = "smoke_sensor_state"
     SMOKE_SENSOR_STATUS = "smoke_sensor_status"
     SMOKE_SENSOR_VALUE = "smoke_sensor_value"
@@ -250,6 +263,7 @@ class DPCode(StrEnum):
     TOTAL_TIME = "total_time"
     TOTAL_PM = "total_pm"
     TVOC = "tvoc"
+    QUICK_START = "quickstart"
     UPPER_TEMP = "upper_temp"
     UPPER_TEMP_F = "upper_temp_f"
     UV = "uv"  # UV sterilization
@@ -266,6 +280,9 @@ class DPCode(StrEnum):
     WATER_RESET = "water_reset"  # Resetting of water usage days
     WATER_SET = "water_set"  # Water level
     WATERSENSOR_STATE = "watersensor_state"
+    WEIGHT = "weight"
+    WEIGHT_COUNT = "weightcount"
+    WEATHER = "weather"
     WET = "wet"  # Humidification
     WINDOW_CHECK = "window_check"
     WINDOW_STATE = "window_state"
@@ -274,4 +291,3 @@ class DPCode(StrEnum):
     WIRELESS_ELECTRICITY = "wireless_electricity"
     WORK_MODE = "work_mode"  # Working mode
     WORK_POWER = "work_power"
-    WEIGHT = "weight"

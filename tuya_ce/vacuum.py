@@ -1,6 +1,7 @@
 """Support for Tuya Vacuums."""
 from __future__ import annotations
 
+from abc import ABC
 from typing import Any
 
 from tuya_iot import TuyaDevice, TuyaDeviceManager
@@ -29,7 +30,7 @@ async def async_setup_entry(
                                     TuyaVacuumEntity.create_entity)
 
 
-class TuyaVacuumEntity(TuyaEntity, StateVacuumEntity):
+class TuyaVacuumEntity(TuyaEntity, StateVacuumEntity, ABC):
     """Tuya Vacuum Device."""
 
     _fan_speed: EnumTypeData | None = None
