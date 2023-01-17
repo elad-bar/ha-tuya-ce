@@ -1,12 +1,12 @@
 {
     "state": {
-        "tuya__air_quality": {
+        "tuya_ce__air_quality": {
             "good": "Bueno",
             "great": "Genial",
             "mild": "Moderado",
             "severe": "Severo"
         },
-        "tuya__status": {
+        "tuya_ce__status": {
             "boiling_temp": "Temperatura de ebullici\u00f3n",
             "cooling": "Refrigeraci\u00f3n",
             "heating": "Calefacci\u00f3n",

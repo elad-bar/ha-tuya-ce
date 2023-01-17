@@ -162,4 +162,4 @@ STATE_MAPPING: dict[str, str] = {
     Mode.SOS: STATE_ALARM_TRIGGERED,
 }
 
-WEATHER_CONDITION = "tuya__weather_condition"
+WEATHER_CONDITION = "tuya_ce__weather_condition"

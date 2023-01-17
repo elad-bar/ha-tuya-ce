@@ -1,16 +1,16 @@
 {
     "state": {
-        "tuya__basic_anti_flickr": {
+        "tuya_ce__basic_anti_flickr": {
             "0": "Deaktivert",
             "1": "50 Hz",
             "2": "60 Hz"
         },
-        "tuya__basic_nightvision": {
+        "tuya_ce__basic_nightvision": {
             "0": "Automatisk",
             "1": "Av",
             "2": "P\u00e5"
         },
-        "tuya__countdown": {
+        "tuya_ce__countdown": {
             "1h": "1 time",
             "2h": "2 timer",
             "3h": "3 timer",
@@ -19,28 +19,28 @@
             "6h": "6 timer",
             "cancel": "Avbryt"
         },
-        "tuya__curtain_mode": {
+        "tuya_ce__curtain_mode": {
             "morning": "Morgen",
             "night": "Natt"
         },
-        "tuya__curtain_motor_mode": {
+        "tuya_ce__curtain_motor_mode": {
             "back": "Tilbake",
             "forward": "Framover"
         },
-        "tuya__decibel_sensitivity": {
+        "tuya_ce__decibel_sensitivity": {
             "0": "Lav f\u00f8lsomhet",
             "1": "H\u00f8y f\u00f8lsomhet"
         },
-        "tuya__fan_angle": {
+        "tuya_ce__fan_angle": {
             "30": "30\u00b0",
             "60": "60\u00b0",
             "90": "90\u00b0"
         },
-        "tuya__fingerbot_mode": {
+        "tuya_ce__fingerbot_mode": {
             "click": "Trykk",
             "switch": "Bryter"
         },
-        "tuya__humidifier_level": {
+        "tuya_ce__humidifier_level": {
             "level_1": "Niv\u00e5 1",
             "level_10": "Niv\u00e5 10",
             "level_2": "Niv\u00e5 2",
@@ -52,44 +52,44 @@
             "level_8": "Niv\u00e5 8",
             "level_9": "Niv\u00e5 9"
         },
-        "tuya__humidifier_moodlighting": {
+        "tuya_ce__humidifier_moodlighting": {
             "1": "Stemning 1",
             "2": "Stemning 2",
             "3": "Stemning 3",
             "4": "Stemning 4",
             "5": "Stemning 5"
         },
-        "tuya__humidifier_spray_mode": {
+        "tuya_ce__humidifier_spray_mode": {
             "auto": "Auto",
             "health": "Helse",
             "humidity": "Fuktighet",
             "sleep": "Sove",
             "work": "Arbeid"
         },
-        "tuya__ipc_work_mode": {
+        "tuya_ce__ipc_work_mode": {
             "0": "Lav effekt modus",
             "1": "Kontinuerlig arbeidsmodus"
         },
-        "tuya__led_type": {
+        "tuya_ce__led_type": {
             "halogen": "Halogen",
             "incandescent": "Gl\u00f8dende",
             "led": "LED"
         },
-        "tuya__light_mode": {
+        "tuya_ce__light_mode": {
             "none": "Av",
             "pos": "Angi bytteplassering",
             "relay": "Angi sl\u00e5 av/p\u00e5 -tilstand"
         },
-        "tuya__motion_sensitivity": {
+        "tuya_ce__motion_sensitivity": {
             "0": "Lav f\u00f8lsomhet",
             "1": "Middels f\u00f8lsomhet",
             "2": "H\u00f8y f\u00f8lsomhet"
         },
-        "tuya__record_mode": {
+        "tuya_ce__record_mode": {
             "1": "Registrer bare hendelser",
             "2": "Kontinuerlig opptak"
         },
-        "tuya__relay_status": {
+        "tuya_ce__relay_status": {
             "last": "Husk siste tilstand",
             "memory": "Husk siste tilstand",
             "off": "Av",
@@ -97,18 +97,18 @@
             "power_off": "Av",
             "power_on": "P\u00e5"
         },
-        "tuya__vacuum_cistern": {
+        "tuya_ce__vacuum_cistern": {
             "closed": "Lukket",
             "high": "H\u00f8y",
             "low": "Lav",
             "middle": "Midten"
         },
-        "tuya__vacuum_collection": {
+        "tuya_ce__vacuum_collection": {
             "large": "Stor",
             "middle": "Midten",
             "small": "Liten"
         },
-        "tuya__vacuum_mode": {
+        "tuya_ce__vacuum_mode": {
             "bow": "Bue",
             "chargego": "Returner til dokken",
             "left_bow": "Bue til venstre",

@@ -1,6 +1,6 @@
 {
     "state": {
-        "tuya__status": {
+        "tuya_ce__status": {
             "boiling_temp": "Teplota varu",
             "cooling": "Chladenie",
             "heating": "Vykurovanie",

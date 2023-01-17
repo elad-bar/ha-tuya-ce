@@ -1,6 +1,6 @@
 {
     "state": {
-        "tuya__status": {
+        "tuya_ce__status": {
             "boiling_temp": "\u6cb8\u817e\u6e29\u5ea6",
             "cooling": "\u51b7\u5374\u4e2d",
             "heating": "\u52a0\u70ed\u4e2d",
