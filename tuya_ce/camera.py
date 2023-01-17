@@ -1,16 +1,18 @@
 """Support for Tuya cameras."""
 from __future__ import annotations
 
+from abc import ABC
+
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components import ffmpeg
 from homeassistant.components.camera import Camera as CameraEntity, CameraEntityFeature
+from homeassistant.components.tuya import DPCode
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .helpers.enums.dp_code import DPCode
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import TuyaEntity
 
@@ -26,7 +28,7 @@ async def async_setup_entry(
                                     TuyaCameraEntity.create_entity)
 
 
-class TuyaCameraEntity(TuyaEntity, CameraEntity):
+class TuyaCameraEntity(TuyaEntity, CameraEntity, ABC):
     """Tuya Camera Entity."""
 
     _attr_supported_features = CameraEntityFeature.STREAM

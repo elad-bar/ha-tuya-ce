@@ -10,13 +10,12 @@ from typing import Any, Literal, overload
 
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
+from homeassistant.components.tuya.const import DPCode, DPType
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity import DeviceInfo, Entity
 
 from ..helpers.const import DEVICE_CONFIG_MANAGER, DOMAIN, TUYA_HA_SIGNAL_UPDATE_ENTITY
-from ..helpers.enums.dp_code import DPCode
-from ..helpers.enums.dp_type import DPType
 from ..helpers.util import remap_value
 
 _LOGGER = logging.getLogger(__package__)

@@ -60,4 +60,4 @@ class TuyaSceneEntity(Scene):
 
     def activate(self, **kwargs: Any) -> None:
         """Activate the scene."""
-        self.home_manager.trigger_scene(self.scene.home_id, self.scene.scene_id)
+        self.home_manager.trigger_scene(str(self.scene.home_id), self.scene.scene_id)

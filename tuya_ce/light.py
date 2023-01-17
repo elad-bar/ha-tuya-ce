@@ -13,20 +13,18 @@ from homeassistant.components.light import (
     ColorMode,
     LightEntity,
 )
+from homeassistant.components.tuya.const import DPCode, DPType, WorkMode
+from homeassistant.components.tuya.light import TuyaLightEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .helpers.enums.dp_code import DPCode
-from .helpers.enums.dp_type import DPType
-from .helpers.enums.work_mode import WorkMode
 from .helpers.util import remap_value
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
 from .models.color_data import ColorData
 from .models.color_type_data import ColorTypeData, ColorTypes
-from .models.tuya_entity_descriptors import TuyaLightEntityDescription
 
 
 async def async_setup_entry(

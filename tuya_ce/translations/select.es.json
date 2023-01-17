@@ -1,16 +1,16 @@
 {
     "state": {
-        "tuya__basic_anti_flickr": {
+        "tuya_ce__basic_anti_flickr": {
             "0": "Deshabilitado",
             "1": "50 Hz",
             "2": "60 Hz"
         },
-        "tuya__basic_nightvision": {
+        "tuya_ce__basic_nightvision": {
             "0": "Autom\u00e1tico",
             "1": "Apagado",
             "2": "Encendido"
         },
-        "tuya__countdown": {
+        "tuya_ce__countdown": {
             "1h": "1 hora",
             "2h": "2 horas",
             "3h": "3 horas",
@@ -19,28 +19,28 @@
             "6h": "6 horas",
             "cancel": "Cancelar"
         },
-        "tuya__curtain_mode": {
+        "tuya_ce__curtain_mode": {
             "morning": "Ma\u00f1ana",
             "night": "Noche"
         },
-        "tuya__curtain_motor_mode": {
+        "tuya_ce__curtain_motor_mode": {
             "back": "Volver",
             "forward": "Adelante"
         },
-        "tuya__decibel_sensitivity": {
+        "tuya_ce__decibel_sensitivity": {
             "0": "Sensibilidad baja",
             "1": "Sensibilidad alta"
         },
-        "tuya__fan_angle": {
+        "tuya_ce__fan_angle": {
             "30": "30\u00b0",
             "60": "60\u00b0",
             "90": "90\u00b0"
         },
-        "tuya__fingerbot_mode": {
+        "tuya_ce__fingerbot_mode": {
             "click": "Push",
             "switch": "Interruptor"
         },
-        "tuya__humidifier_level": {
+        "tuya_ce__humidifier_level": {
             "level_1": "Nivel 1",
             "level_10": "Nivel 10",
             "level_2": "Nivel 2",
@@ -52,44 +52,44 @@
             "level_8": "Nivel 8",
             "level_9": "Nivel 9"
         },
-        "tuya__humidifier_moodlighting": {
+        "tuya_ce__humidifier_moodlighting": {
             "1": "Estado de \u00e1nimo 1",
             "2": "Estado de \u00e1nimo 2",
             "3": "Estado de \u00e1nimo 3",
             "4": "Estado de \u00e1nimo 4",
             "5": "Estado de \u00e1nimo 5"
         },
-        "tuya__humidifier_spray_mode": {
+        "tuya_ce__humidifier_spray_mode": {
             "auto": "Autom\u00e1tico",
             "health": "Salud",
             "humidity": "Humedad",
             "sleep": "Dormir",
             "work": "Trabajo"
         },
-        "tuya__ipc_work_mode": {
+        "tuya_ce__ipc_work_mode": {
             "0": "Modo de bajo consumo",
             "1": "Modo de funcionamiento continuo"
         },
-        "tuya__led_type": {
+        "tuya_ce__led_type": {
             "halogen": "Hal\u00f3geno",
             "incandescent": "Incandescente",
             "led": "LED"
         },
-        "tuya__light_mode": {
+        "tuya_ce__light_mode": {
             "none": "Apagado",
             "pos": "Indicar la ubicaci\u00f3n del interruptor",
             "relay": "Indicar el estado de encendido/apagado del interruptor"
         },
-        "tuya__motion_sensitivity": {
+        "tuya_ce__motion_sensitivity": {
             "0": "Sensibilidad baja",
             "1": "Sensibilidad media",
             "2": "Sensibilidad alta"
         },
-        "tuya__record_mode": {
+        "tuya_ce__record_mode": {
             "1": "Grabar solo eventos",
             "2": "Grabaci\u00f3n continua"
         },
-        "tuya__relay_status": {
+        "tuya_ce__relay_status": {
             "last": "Recordar el \u00faltimo estado",
             "memory": "Recordar el \u00faltimo estado",
             "off": "Apagado",
@@ -97,18 +97,18 @@
             "power_off": "Apagado",
             "power_on": "Encendido"
         },
-        "tuya__vacuum_cistern": {
+        "tuya_ce__vacuum_cistern": {
             "closed": "Cerrada",
             "high": "Alto",
             "low": "Bajo",
             "middle": "Medio"
         },
-        "tuya__vacuum_collection": {
+        "tuya_ce__vacuum_collection": {
             "large": "Grande",
             "middle": "Medio",
             "small": "Peque\u00f1o"
         },
-        "tuya__vacuum_mode": {
+        "tuya_ce__vacuum_mode": {
             "bow": "Inclinarse",
             "chargego": "Regresar a la base",
             "left_bow": "Arco izquierdo",

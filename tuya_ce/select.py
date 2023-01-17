@@ -4,12 +4,12 @@ from __future__ import annotations
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.select import SelectEntity, SelectEntityDescription
+from homeassistant.components.tuya.const import DPType
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import TuyaEntity
 

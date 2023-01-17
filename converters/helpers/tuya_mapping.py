@@ -1,0 +1,3 @@
+VACUUMS: tuple[str, ...] = (
+    "sd",
+)

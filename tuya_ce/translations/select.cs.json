@@ -1,6 +1,6 @@
 {
     "state": {
-        "tuya__humidifier_spray_mode": {
+        "tuya_ce__humidifier_spray_mode": {
             "humidity": "Vlhkost"
         }
     }

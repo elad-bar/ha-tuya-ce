@@ -7,16 +7,16 @@ from homeassistant.components.humidifier import (
     HumidifierEntity,
     HumidifierEntityFeature,
 )
+from homeassistant.components.tuya import DPCode
+from homeassistant.components.tuya.const import DPType
+from homeassistant.components.tuya.humidifier import TuyaHumidifierEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .helpers.enums.dp_code import DPCode
-from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
-from .models.tuya_entity_descriptors import TuyaHumidifierEntityDescription
 
 
 async def async_setup_entry(

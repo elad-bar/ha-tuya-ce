@@ -2,12 +2,21 @@
 from __future__ import annotations
 
 from homeassistant.components.climate import HVACMode
+from homeassistant.components.tuya.alarm_control_panel import Mode
 from homeassistant.components.vacuum import (
     STATE_CLEANING,
     STATE_DOCKED,
     STATE_RETURNING,
 )
-from homeassistant.const import STATE_IDLE, STATE_PAUSED, Platform
+from homeassistant.const import (
+    STATE_ALARM_ARMED_AWAY,
+    STATE_ALARM_ARMED_HOME,
+    STATE_ALARM_DISARMED,
+    STATE_ALARM_TRIGGERED,
+    STATE_IDLE,
+    STATE_PAUSED,
+    Platform,
+)
 
 DOMAIN = "tuya_ce"
 
@@ -20,12 +29,12 @@ BASE_URL = "https://raw.githubusercontent.com/elad-bar/ha-tuya-ce/main/config/"
 
 DEVICES_CONFIG = "devices"
 COUNTRIES_CONFIG = "countries"
-DEVICE_CLASS_CONFIG = "device_class"
+UNITS_CONFIG = "units"
 
 TUYA_CONFIGURATIONS = [
     DEVICES_CONFIG,
     COUNTRIES_CONFIG,
-    DEVICE_CLASS_CONFIG
+    UNITS_CONFIG
 ]
 
 CONF_AUTH_TYPE = "auth_type"
@@ -49,6 +58,8 @@ TUYA_RESPONSE_PLATFORM_URL = "platform_url"
 
 TUYA_SMART_APP = "tuyaSmart"
 SMARTLIFE_APP = "smartlife"
+
+ELECTRIC_RESISTANCE_OHM = "Ω"
 
 PLATFORMS = [
     Platform.ALARM_CONTROL_PANEL,
@@ -143,3 +154,12 @@ ACCESS_MODES = {
 }
 
 TUYA_UNSUPPORTED_CATEGORIES_DATA_KEYS = ["name", "model", "product_name"]
+
+STATE_MAPPING: dict[str, str] = {
+    Mode.DISARMED: STATE_ALARM_DISARMED,
+    Mode.ARM: STATE_ALARM_ARMED_AWAY,
+    Mode.HOME: STATE_ALARM_ARMED_HOME,
+    Mode.SOS: STATE_ALARM_TRIGGERED,
+}
+
+WEATHER_CONDITION = "tuya_ce__weather_condition"

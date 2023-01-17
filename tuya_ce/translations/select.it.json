@@ -1,16 +1,16 @@
 {
     "state": {
-        "tuya__basic_anti_flickr": {
+        "tuya_ce__basic_anti_flickr": {
             "0": "Disabilitato",
             "1": "50 Hz",
             "2": "60 Hz"
         },
-        "tuya__basic_nightvision": {
+        "tuya_ce__basic_nightvision": {
             "0": "Automatico",
             "1": "Spento",
             "2": "Acceso"
         },
-        "tuya__countdown": {
+        "tuya_ce__countdown": {
             "1h": "1 ora",
             "2h": "2 ore",
             "3h": "3 ore",
@@ -19,28 +19,28 @@
             "6h": "6 ore",
             "cancel": "Annulla"
         },
-        "tuya__curtain_mode": {
+        "tuya_ce__curtain_mode": {
             "morning": "Mattina",
             "night": "Notte"
         },
-        "tuya__curtain_motor_mode": {
+        "tuya_ce__curtain_motor_mode": {
             "back": "Indietro",
             "forward": "Avanti"
         },
-        "tuya__decibel_sensitivity": {
+        "tuya_ce__decibel_sensitivity": {
             "0": "Bassa sensibilit\u00e0",
             "1": "Alta sensibilit\u00e0"
         },
-        "tuya__fan_angle": {
+        "tuya_ce__fan_angle": {
             "30": "30\u00b0",
             "60": "60\u00b0",
             "90": "90\u00b0"
         },
-        "tuya__fingerbot_mode": {
+        "tuya_ce__fingerbot_mode": {
             "click": "Spingere",
             "switch": "Interruttore"
         },
-        "tuya__humidifier_level": {
+        "tuya_ce__humidifier_level": {
             "level_1": "Livello 1",
             "level_10": "Livello 10",
             "level_2": "Livello 2",
@@ -52,44 +52,44 @@
             "level_8": "Livello 8",
             "level_9": "Livello 9"
         },
-        "tuya__humidifier_moodlighting": {
+        "tuya_ce__humidifier_moodlighting": {
             "1": "Umore 1",
             "2": "Umore 2",
             "3": "Umore 3",
             "4": "Umore 4",
             "5": "Umore 5"
         },
-        "tuya__humidifier_spray_mode": {
+        "tuya_ce__humidifier_spray_mode": {
             "auto": "Automatico",
             "health": "Salute",
             "humidity": "Umidit\u00e0",
             "sleep": "Sonno",
             "work": "Lavoro"
         },
-        "tuya__ipc_work_mode": {
+        "tuya_ce__ipc_work_mode": {
             "0": "Modalit\u00e0 a basso consumo",
             "1": "Modalit\u00e0 di lavoro continua"
         },
-        "tuya__led_type": {
+        "tuya_ce__led_type": {
             "halogen": "Alogena",
             "incandescent": "Incandescenza",
             "led": "LED"
         },
-        "tuya__light_mode": {
+        "tuya_ce__light_mode": {
             "none": "Spento",
             "pos": "Indica la posizione dell'interruttore",
             "relay": "Indica lo stato di accensione/spegnimento dell'interruttore"
         },
-        "tuya__motion_sensitivity": {
+        "tuya_ce__motion_sensitivity": {
             "0": "Bassa sensibilit\u00e0",
             "1": "Sensibilit\u00e0 media",
             "2": "Alta sensibilit\u00e0"
         },
-        "tuya__record_mode": {
+        "tuya_ce__record_mode": {
             "1": "Registra solo gli eventi",
             "2": "Registrazione continua"
         },
-        "tuya__relay_status": {
+        "tuya_ce__relay_status": {
             "last": "Ricorda l'ultimo stato",
             "memory": "Ricorda l'ultimo stato",
             "off": "Spento",
@@ -97,18 +97,18 @@
             "power_off": "Spento",
             "power_on": "Acceso"
         },
-        "tuya__vacuum_cistern": {
+        "tuya_ce__vacuum_cistern": {
             "closed": "Chiusa",
             "high": "Alto",
             "low": "Basso",
             "middle": "Medio"
         },
-        "tuya__vacuum_collection": {
+        "tuya_ce__vacuum_collection": {
             "large": "Grande",
             "middle": "Medio",
             "small": "Piccolo"
         },
-        "tuya__vacuum_mode": {
+        "tuya_ce__vacuum_mode": {
             "bow": "Arco",
             "chargego": "Ritorna alla base",
             "left_bow": "Arco a sinistra",

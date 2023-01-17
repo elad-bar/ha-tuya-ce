@@ -4,9 +4,9 @@
             "unit": "",
             "device_classes": [
                 "aqi",
-                "date",
                 "monetary",
-                "timestamp"
+                "timestamp",
+                "date"
             ],
             "aliases": [
                 " "
@@ -17,37 +17,9 @@
             "unit": "",
             "device_classes": [
                 "aqi",
-                "date",
                 "monetary",
-                "timestamp"
-            ],
-            "aliases": [
-                " "
-            ],
-            "conversion_unit": null
-        }
-    },
-    "date": {
-        "": {
-            "unit": "",
-            "device_classes": [
-                "aqi",
-                "date",
-                "monetary",
-                "timestamp"
-            ],
-            "aliases": [
-                " "
-            ],
-            "conversion_unit": null
-        },
-        " ": {
-            "unit": "",
-            "device_classes": [
-                "aqi",
-                "date",
-                "monetary",
-                "timestamp"
+                "timestamp",
+                "date"
             ],
             "aliases": [
                 " "
@@ -60,9 +32,9 @@
             "unit": "",
             "device_classes": [
                 "aqi",
-                "date",
                 "monetary",
-                "timestamp"
+                "timestamp",
+                "date"
             ],
             "aliases": [
                 " "
@@ -73,9 +45,9 @@
             "unit": "",
             "device_classes": [
                 "aqi",
-                "date",
                 "monetary",
-                "timestamp"
+                "timestamp",
+                "date"
             ],
             "aliases": [
                 " "
@@ -88,9 +60,9 @@
             "unit": "",
             "device_classes": [
                 "aqi",
-                "date",
                 "monetary",
-                "timestamp"
+                "timestamp",
+                "date"
             ],
             "aliases": [
                 " "
@@ -101,9 +73,37 @@
             "unit": "",
             "device_classes": [
                 "aqi",
-                "date",
                 "monetary",
-                "timestamp"
+                "timestamp",
+                "date"
+            ],
+            "aliases": [
+                " "
+            ],
+            "conversion_unit": null
+        }
+    },
+    "date": {
+        "": {
+            "unit": "",
+            "device_classes": [
+                "aqi",
+                "monetary",
+                "timestamp",
+                "date"
+            ],
+            "aliases": [
+                " "
+            ],
+            "conversion_unit": null
+        },
+        " ": {
+            "unit": "",
+            "device_classes": [
+                "aqi",
+                "monetary",
+                "timestamp",
+                "date"
             ],
             "aliases": [
                 " "
@@ -121,8 +121,8 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         },
@@ -135,22 +135,8 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
-            ],
-            "conversion_unit": null
-        },
-        "percent": {
-            "unit": "%",
-            "device_classes": [
-                "battery",
-                "humidity",
-                "power_factor"
-            ],
-            "aliases": [
-                "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         },
@@ -163,8 +149,22 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
+            ],
+            "conversion_unit": null
+        },
+        "percent": {
+            "unit": "%",
+            "device_classes": [
+                "battery",
+                "humidity",
+                "power_factor"
+            ],
+            "aliases": [
+                "pct",
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         }
@@ -179,8 +179,8 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         },
@@ -193,22 +193,8 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
-            ],
-            "conversion_unit": null
-        },
-        "percent": {
-            "unit": "%",
-            "device_classes": [
-                "battery",
-                "humidity",
-                "power_factor"
-            ],
-            "aliases": [
-                "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         },
@@ -221,8 +207,22 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
+            ],
+            "conversion_unit": null
+        },
+        "percent": {
+            "unit": "%",
+            "device_classes": [
+                "battery",
+                "humidity",
+                "power_factor"
+            ],
+            "aliases": [
+                "pct",
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         }
@@ -237,8 +237,8 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         },
@@ -251,22 +251,8 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
-            ],
-            "conversion_unit": null
-        },
-        "percent": {
-            "unit": "%",
-            "device_classes": [
-                "battery",
-                "humidity",
-                "power_factor"
-            ],
-            "aliases": [
-                "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         },
@@ -279,8 +265,22 @@
             ],
             "aliases": [
                 "pct",
-                "percent",
-                "% RH"
+                "% RH",
+                "percent"
+            ],
+            "conversion_unit": null
+        },
+        "percent": {
+            "unit": "%",
+            "device_classes": [
+                "battery",
+                "humidity",
+                "power_factor"
+            ],
+            "aliases": [
+                "pct",
+                "% RH",
+                "percent"
             ],
             "conversion_unit": null
         }
@@ -292,7 +292,7 @@
                 "carbon_monoxide",
                 "carbon_dioxide"
             ],
-            "aliases": null,
+            "aliases": [],
             "conversion_unit": null
         },
         "ppb": {
@@ -301,7 +301,7 @@
                 "carbon_monoxide",
                 "carbon_dioxide"
             ],
-            "aliases": null,
+            "aliases": [],
             "conversion_unit": "ppm"
         }
     },
@@ -312,7 +312,7 @@
                 "carbon_monoxide",
                 "carbon_dioxide"
             ],
-            "aliases": null,
+            "aliases": [],
             "conversion_unit": null
         },
         "ppb": {
@@ -321,7 +321,7 @@
                 "carbon_monoxide",
                 "carbon_dioxide"
             ],
-            "aliases": null,
+            "aliases": [],
             "conversion_unit": "ppm"
         }
     },
@@ -400,19 +400,8 @@
                 "energy"
             ],
             "aliases": [
-                "wh",
-                "watthour"
-            ],
-            "conversion_unit": null
-        },
-        "wh": {
-            "unit": "Wh",
-            "device_classes": [
-                "energy"
-            ],
-            "aliases": [
-                "wh",
-                "watthour"
+                "watthour",
+                "wh"
             ],
             "conversion_unit": null
         },
@@ -422,8 +411,19 @@
                 "energy"
             ],
             "aliases": [
-                "wh",
-                "watthour"
+                "watthour",
+                "wh"
+            ],
+            "conversion_unit": null
+        },
+        "wh": {
+            "unit": "Wh",
+            "device_classes": [
+                "energy"
+            ],
+            "aliases": [
+                "watthour",
+                "wh"
             ],
             "conversion_unit": null
         },
@@ -434,8 +434,8 @@
             ],
             "aliases": [
                 "kwh",
-                "kilowatt-hour",
-                "kW\u00b7h"
+                "kW\u00b7h",
+                "kilowatt-hour"
             ],
             "conversion_unit": null
         },
@@ -446,20 +446,8 @@
             ],
             "aliases": [
                 "kwh",
-                "kilowatt-hour",
-                "kW\u00b7h"
-            ],
-            "conversion_unit": null
-        },
-        "kilowatt-hour": {
-            "unit": "kWh",
-            "device_classes": [
-                "energy"
-            ],
-            "aliases": [
-                "kwh",
-                "kilowatt-hour",
-                "kW\u00b7h"
+                "kW\u00b7h",
+                "kilowatt-hour"
             ],
             "conversion_unit": null
         },
@@ -470,8 +458,20 @@
             ],
             "aliases": [
                 "kwh",
-                "kilowatt-hour",
-                "kW\u00b7h"
+                "kW\u00b7h",
+                "kilowatt-hour"
+            ],
+            "conversion_unit": null
+        },
+        "kilowatt-hour": {
+            "unit": "kWh",
+            "device_classes": [
+                "energy"
+            ],
+            "aliases": [
+                "kwh",
+                "kW\u00b7h",
+                "kilowatt-hour"
             ],
             "conversion_unit": null
         }
@@ -538,134 +538,219 @@
                 "lux"
             ],
             "conversion_unit": null
-        },
-        "lm": {
-            "unit": "lm",
-            "device_classes": [
-                "illuminance"
-            ],
-            "aliases": [
-                "lum",
-                "lumen"
-            ],
-            "conversion_unit": null
-        },
-        "lum": {
-            "unit": "lm",
-            "device_classes": [
-                "illuminance"
-            ],
-            "aliases": [
-                "lum",
-                "lumen"
-            ],
-            "conversion_unit": null
-        },
-        "lumen": {
-            "unit": "lm",
-            "device_classes": [
-                "illuminance"
-            ],
-            "aliases": [
-                "lum",
-                "lumen"
-            ],
-            "conversion_unit": null
         }
     },
-    "nitrogen_dioxide": {
+    "sulphur_dioxide": {
         "\u00b5g/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "\u00b5g/m3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "ug/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "mg/m\u00b3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        },
+        "mg/m3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        }
+    },
+    "nitrogen_dioxide": {
+        "\u00b5g/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "\u00b5g/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "mg/m\u00b3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -675,251 +760,15 @@
         "mg/m3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        }
-    },
-    "nitrogen_monoxide": {
-        "\u00b5g/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
                 "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
                 "ozone",
-                "pm1",
                 "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
+                "volatile_organic_compounds",
                 "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
                 "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "\u00b5g/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
                 "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "mg/m\u00b3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        },
-        "mg/m3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        }
-    },
-    "nitrous_oxide": {
-        "\u00b5g/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "\u00b5g/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "mg/m\u00b3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        },
-        "mg/m3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -931,95 +780,95 @@
         "\u00b5g/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "\u00b5g/m3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "ug/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "mg/m\u00b3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -1029,133 +878,15 @@
         "mg/m3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        }
-    },
-    "pm1": {
-        "\u00b5g/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
                 "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
                 "ozone",
-                "pm1",
                 "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
+                "volatile_organic_compounds",
                 "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
                 "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "\u00b5g/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
                 "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "mg/m\u00b3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        },
-        "mg/m3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -1167,95 +898,95 @@
         "\u00b5g/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "\u00b5g/m3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "ug/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "mg/m\u00b3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -1265,251 +996,15 @@
         "mg/m3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        }
-    },
-    "pm10": {
-        "\u00b5g/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
                 "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
                 "ozone",
-                "pm1",
                 "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
+                "volatile_organic_compounds",
                 "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
                 "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "\u00b5g/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
                 "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "mg/m\u00b3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        },
-        "mg/m3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        }
-    },
-    "sulphur_dioxide": {
-        "\u00b5g/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "\u00b5g/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m\u00b3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "mg/m\u00b3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "mg/m3"
-            ],
-            "conversion_unit": "\u00b5g/m\u00b3"
-        },
-        "mg/m3": {
-            "unit": "mg/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -1521,95 +1016,95 @@
         "\u00b5g/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
-            ],
-            "conversion_unit": null
-        },
-        "ug/m3": {
-            "unit": "\u00b5g/m\u00b3",
-            "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
-                "sulphur_dioxide",
-                "volatile_organic_compounds"
-            ],
-            "aliases": [
-                "ug/m3",
-                "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "\u00b5g/m3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "ug/m\u00b3": {
             "unit": "\u00b5g/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
-                "ug/m3",
                 "\u00b5g/m3",
-                "ug/m\u00b3"
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
             ],
             "conversion_unit": null
         },
         "mg/m\u00b3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -1619,15 +1114,487 @@
         "mg/m3": {
             "unit": "mg/m\u00b3",
             "device_classes": [
-                "nitrogen_dioxide",
-                "nitrogen_monoxide",
-                "nitrous_oxide",
-                "ozone",
-                "pm1",
-                "pm25",
-                "pm10",
                 "sulphur_dioxide",
-                "volatile_organic_compounds"
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        }
+    },
+    "nitrous_oxide": {
+        "\u00b5g/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "\u00b5g/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "mg/m\u00b3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        },
+        "mg/m3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        }
+    },
+    "pm10": {
+        "\u00b5g/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "\u00b5g/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "mg/m\u00b3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        },
+        "mg/m3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        }
+    },
+    "nitrogen_monoxide": {
+        "\u00b5g/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "\u00b5g/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "mg/m\u00b3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        },
+        "mg/m3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        }
+    },
+    "pm1": {
+        "\u00b5g/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "\u00b5g/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m\u00b3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "ug/m3": {
+            "unit": "\u00b5g/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "\u00b5g/m3",
+                "ug/m\u00b3",
+                "ug/m3"
+            ],
+            "conversion_unit": null
+        },
+        "mg/m\u00b3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
+            ],
+            "aliases": [
+                "mg/m3"
+            ],
+            "conversion_unit": "\u00b5g/m\u00b3"
+        },
+        "mg/m3": {
+            "unit": "mg/m\u00b3",
+            "device_classes": [
+                "sulphur_dioxide",
+                "nitrogen_dioxide",
+                "ozone",
+                "pm25",
+                "volatile_organic_compounds",
+                "nitrous_oxide",
+                "pm10",
+                "nitrogen_monoxide",
+                "pm1"
             ],
             "aliases": [
                 "mg/m3"
@@ -1683,7 +1650,7 @@
             "device_classes": [
                 "pressure"
             ],
-            "aliases": null,
+            "aliases": [],
             "conversion_unit": null
         },
         "mbar": {
@@ -1712,19 +1679,8 @@
                 "pressure"
             ],
             "aliases": [
-                "hpa",
-                "hectopascal"
-            ],
-            "conversion_unit": null
-        },
-        "hpa": {
-            "unit": "hPa",
-            "device_classes": [
-                "pressure"
-            ],
-            "aliases": [
-                "hpa",
-                "hectopascal"
+                "hectopascal",
+                "hpa"
             ],
             "conversion_unit": null
         },
@@ -1734,8 +1690,19 @@
                 "pressure"
             ],
             "aliases": [
-                "hpa",
-                "hectopascal"
+                "hectopascal",
+                "hpa"
+            ],
+            "conversion_unit": null
+        },
+        "hpa": {
+            "unit": "hPa",
+            "device_classes": [
+                "pressure"
+            ],
+            "aliases": [
+                "hectopascal",
+                "hpa"
             ],
             "conversion_unit": null
         },
@@ -1764,7 +1731,7 @@
             "device_classes": [
                 "pressure"
             ],
-            "aliases": null,
+            "aliases": [],
             "conversion_unit": null
         },
         "Pa": {
@@ -1772,7 +1739,7 @@
             "device_classes": [
                 "pressure"
             ],
-            "aliases": null,
+            "aliases": [],
             "conversion_unit": null
         }
     },
@@ -1890,33 +1857,9 @@
                 "temperature"
             ],
             "aliases": [
-                "\u00b0f",
+                "fahrenheit",
                 "f",
-                "fahrenheit"
-            ],
-            "conversion_unit": null
-        },
-        "\u00b0f": {
-            "unit": "\u00b0F",
-            "device_classes": [
-                "temperature"
-            ],
-            "aliases": [
-                "\u00b0f",
-                "f",
-                "fahrenheit"
-            ],
-            "conversion_unit": null
-        },
-        "f": {
-            "unit": "\u00b0F",
-            "device_classes": [
-                "temperature"
-            ],
-            "aliases": [
-                "\u00b0f",
-                "f",
-                "fahrenheit"
+                "\u00b0f"
             ],
             "conversion_unit": null
         },
@@ -1926,9 +1869,33 @@
                 "temperature"
             ],
             "aliases": [
-                "\u00b0f",
+                "fahrenheit",
                 "f",
-                "fahrenheit"
+                "\u00b0f"
+            ],
+            "conversion_unit": null
+        },
+        "f": {
+            "unit": "\u00b0F",
+            "device_classes": [
+                "temperature"
+            ],
+            "aliases": [
+                "fahrenheit",
+                "f",
+                "\u00b0f"
+            ],
+            "conversion_unit": null
+        },
+        "\u00b0f": {
+            "unit": "\u00b0F",
+            "device_classes": [
+                "temperature"
+            ],
+            "aliases": [
+                "fahrenheit",
+                "f",
+                "\u00b0f"
             ],
             "conversion_unit": null
         }
@@ -1986,6 +1953,18 @@
                 "millivolt"
             ],
             "conversion_unit": "V"
+        }
+    },
+    "weight": {
+        "g": {
+            "unit": "g",
+            "device_classes": [
+                "weight"
+            ],
+            "aliases": [
+                "g"
+            ],
+            "conversion_unit": "kg"
         }
     }
 }

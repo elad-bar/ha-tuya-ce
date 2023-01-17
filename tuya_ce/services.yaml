@@ -1,0 +1,3 @@
+update_remote_configuration:
+  name: Update remote configuration
+  description: Creates a configuration file for remote update

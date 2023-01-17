@@ -8,13 +8,13 @@ from homeassistant.components.cover import CoverEntityDescription
 from homeassistant.components.humidifier import HumidifierEntityDescription
 from homeassistant.components.light import LightEntityDescription
 from homeassistant.components.sensor import SensorEntityDescription
+from homeassistant.components.tuya import DPCode
 
-from ..helpers.enums.dp_code import DPCode
 from .color_type_data import ColorTypeData, ColorTypes
 
 
 @dataclass
-class TuyaBinarySensorEntityDescription(BinarySensorEntityDescription):
+class T1uyaBinarySensorEntityDescription(BinarySensorEntityDescription):
     """Describes a Tuya binary sensor."""
 
     # DPCode, to use. If None, the key will be used as DPCode
@@ -25,13 +25,13 @@ class TuyaBinarySensorEntityDescription(BinarySensorEntityDescription):
 
 
 @dataclass
-class TuyaClimateEntityDescription(ClimateEntityDescription):
+class T1uyaClimateEntityDescription(ClimateEntityDescription):
     """Describe an Tuya climate entity."""
     switch_only_hvac_mode: HVACMode = HVACMode.OFF
 
 
 @dataclass
-class TuyaCoverEntityDescription(CoverEntityDescription):
+class T1uyaCoverEntityDescription(CoverEntityDescription):
     """Describe an Tuya cover entity."""
 
     current_state: DPCode | None = None
@@ -44,7 +44,7 @@ class TuyaCoverEntityDescription(CoverEntityDescription):
 
 
 @dataclass
-class TuyaHumidifierEntityDescription(HumidifierEntityDescription):
+class T1uyaHumidifierEntityDescription(HumidifierEntityDescription):
     """Describe an Tuya (de)humidifier entity."""
 
     # DPCode, to use. If None, the key will be used as DPCode
@@ -54,7 +54,7 @@ class TuyaHumidifierEntityDescription(HumidifierEntityDescription):
 
 
 @dataclass
-class TuyaLightEntityDescription(LightEntityDescription):
+class T1uyaLightEntityDescription(LightEntityDescription):
     """Describe an Tuya light entity."""
 
     brightness_max: DPCode | None = None
@@ -67,7 +67,7 @@ class TuyaLightEntityDescription(LightEntityDescription):
 
 
 @dataclass
-class TuyaSensorEntityDescription(SensorEntityDescription):
+class T1uyaSensorEntityDescription1(SensorEntityDescription):
     """Describes Tuya sensor entity."""
 
     subkey: str | None = None

@@ -1,7 +1,6 @@
 from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
 from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
-
-from .enums.dp_code import DPCode
+from homeassistant.components.tuya import DPCode
 
 """
 Old lights where in `tuya.{device_id}` format, now the DPCode is added.

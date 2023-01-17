@@ -45,6 +45,8 @@ class Test:
 
         self._unsupported_categories = {}
 
+        self._countries = self._get_data("countries")
+
     @staticmethod
     def _get_key(is_read_only: bool, type_str: str):
         key = f"{is_read_only}_{type_str.lower()}"
@@ -258,13 +260,14 @@ class Test:
     async def initialize(self):
         """Do initialization of test dependencies instances, Returns None."""
         _LOGGER.info("Initialize")
-
+        """
         self._load_ha_data()
         self._gap_analysis()
         self._match_components()
 
         self._log_data("Unsupported categories", self._unsupported_categories)
         self._log_data("Gaps", self._data_gaps)
+        """
 
     async def terminate(self):
         """Do termination of API, Returns None."""

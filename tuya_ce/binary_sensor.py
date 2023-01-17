@@ -4,6 +4,9 @@ from __future__ import annotations
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.binary_sensor import BinarySensorEntity
+from homeassistant.components.tuya.binary_sensor import (
+    TuyaBinarySensorEntityDescription,
+)
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
@@ -11,7 +14,6 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import TuyaEntity
-from .models.tuya_entity_descriptors import TuyaBinarySensorEntityDescription
 
 
 async def async_setup_entry(

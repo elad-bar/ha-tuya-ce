@@ -16,7 +16,6 @@ from ..helpers.const import (
     ACCESS_MODES,
     BASE_URL,
     COUNTRIES_CONFIG,
-    DEVICE_CLASS_CONFIG,
     DEVICE_CONFIG_MANAGER,
     DEVICES_CONFIG,
     DOMAIN,
@@ -28,6 +27,7 @@ from ..helpers.const import (
     TUYA_SPECIAL_MAPPING,
     TUYA_TYPES_MAPPING,
     TUYA_UNSUPPORTED_CATEGORIES_DATA_KEYS,
+    UNITS_CONFIG,
 )
 from .tuya_platform_manager import TuyaPlatformManager
 
@@ -54,8 +54,8 @@ class TuyaConfigurationManager:
         return self._data.get(COUNTRIES_CONFIG, [])
 
     @property
-    def device_classes(self) -> dict:
-        return self._data.get(DEVICE_CLASS_CONFIG, {})
+    def units(self) -> dict:
+        return self._data.get(UNITS_CONFIG, {})
 
     @property
     def devices(self) -> dict:
@@ -71,7 +71,9 @@ class TuyaConfigurationManager:
     def _get_stores(self):
         stores = {}
         for config_file in TUYA_CONFIGURATIONS:
-            store = Store(self._hass, STORAGE_VERSION, config_file, encoder=JSONEncoder)
+            path = f"{DOMAIN}/{config_file}.json"
+
+            store = Store(self._hass, STORAGE_VERSION, path, encoder=JSONEncoder)
 
             stores[config_file] = store
 
@@ -137,7 +139,8 @@ class TuyaConfigurationManager:
                             is_enabled = self._platform_manager.is_enabled(domain, category_config, device)
 
                             if is_enabled:
-                                entity_description = self._platform_manager.get_entity_description(domain, platform_item)
+                                entity_description = self._platform_manager.get_entity_description(domain,
+                                                                                                   platform_item)
 
                                 if entity_description is None:
                                     _LOGGER.debug(f"Running initializer, Domain: {domain}")

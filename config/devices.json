@@ -103,10 +103,10 @@
         "sensor": [
             {
                 "key": "gas_sensor_value",
-                "device_class": "measurement",
                 "entity_registry_enabled_default": true,
                 "icon": "mdi:gas-cylinder",
-                "name": "Gas"
+                "name": "Gas",
+                "state_class": "measurement"
             },
             {
                 "key": "ch4_sensor_value",
@@ -180,11 +180,11 @@
             },
             {
                 "key": "smoke_sensor_value",
-                "device_class": "measurement",
                 "entity_category": "diagnostic",
                 "entity_registry_enabled_default": true,
                 "icon": "mdi:smoke-detector",
-                "name": "Smoke amount"
+                "name": "Smoke amount",
+                "state_class": "measurement"
             },
             {
                 "key": "battery_percentage",
@@ -944,9 +944,9 @@
         "sensor": [
             {
                 "key": "gas_sensor_value",
-                "device_class": "measurement",
                 "entity_registry_enabled_default": true,
-                "icon": "mdi:gas-cylinder"
+                "icon": "mdi:gas-cylinder",
+                "state_class": "measurement"
             },
             {
                 "key": "battery_percentage",
@@ -1184,8 +1184,8 @@
         ],
         "climate": [
             {
-                "key": "wkf",
-                "switch_only_hvac_mode": "heat"
+                "switch_only_hvac_mode": "heat",
+                "key": "wkf"
             }
         ],
         "sensor": [
@@ -1395,11 +1395,11 @@
         "sensor": [
             {
                 "key": "smoke_sensor_value",
-                "device_class": "measurement",
                 "entity_category": "diagnostic",
                 "entity_registry_enabled_default": true,
                 "icon": "mdi:smoke-detector",
-                "name": "Smoke amount"
+                "name": "Smoke amount",
+                "state_class": "measurement"
             },
             {
                 "key": "battery_percentage",
@@ -1545,24 +1545,24 @@
         "select": [
             {
                 "key": "cistern",
-                "device_class": "tuya__vacuum_cistern",
                 "entity_category": "config",
                 "icon": "mdi:water-opacity",
-                "name": "Water tank adjustment"
+                "name": "Water tank adjustment",
+                "translation_key": "vacuum_cistern"
             },
             {
                 "key": "collection_mode",
-                "device_class": "tuya__vacuum_collection",
                 "entity_category": "config",
                 "icon": "mdi:air-filter",
-                "name": "Dust collection mode"
+                "name": "Dust collection mode",
+                "translation_key": "vacuum_collection"
             },
             {
                 "key": "mode",
-                "device_class": "tuya__vacuum_mode",
                 "entity_category": "config",
                 "icon": "mdi:layers-outline",
-                "name": "Mode"
+                "name": "Mode",
+                "translation_key": "vacuum_mode"
             }
         ],
         "sensor": [
@@ -1735,8 +1735,8 @@
     "kt": {
         "climate": [
             {
-                "key": "kt",
-                "switch_only_hvac_mode": "cool"
+                "switch_only_hvac_mode": "cool",
+                "key": "kt"
             }
         ],
         "light": [
@@ -1793,8 +1793,8 @@
     "qn": {
         "climate": [
             {
-                "key": "qn",
-                "switch_only_hvac_mode": "heat"
+                "switch_only_hvac_mode": "heat",
+                "key": "qn"
             }
         ],
         "light": [
@@ -1867,16 +1867,16 @@
     "rs": {
         "climate": [
             {
-                "key": "rs",
-                "switch_only_hvac_mode": "heat"
+                "switch_only_hvac_mode": "heat",
+                "key": "rs"
             }
         ]
     },
     "wk": {
         "climate": [
             {
-                "key": "wk",
-                "switch_only_hvac_mode": "heat_cool"
+                "switch_only_hvac_mode": "heat_cool",
+                "key": "wk"
             }
         ]
     },
@@ -1940,16 +1940,16 @@
         "select": [
             {
                 "key": "control_back_mode",
-                "device_class": "tuya__curtain_motor_mode",
                 "entity_category": "config",
                 "icon": "mdi:swap-horizontal",
-                "name": "Motor mode"
+                "name": "Motor mode",
+                "translation_key": "curtain_motor_mode"
             },
             {
                 "key": "mode",
-                "device_class": "tuya__curtain_mode",
                 "entity_category": "config",
-                "name": "Mode"
+                "name": "Mode",
+                "translation_key": "curtain_mode"
             }
         ],
         "sensor": [
@@ -2159,38 +2159,38 @@
         "select": [
             {
                 "key": "spray_mode",
-                "device_class": "tuya__humidifier_spray_mode",
                 "entity_category": "config",
                 "icon": "mdi:spray",
-                "name": "Spray mode"
+                "name": "Spray mode",
+                "translation_key": "humidifier_spray_mode"
             },
             {
                 "key": "level",
-                "device_class": "tuya__humidifier_level",
                 "entity_category": "config",
                 "icon": "mdi:spray",
-                "name": "Spraying level"
+                "name": "Spraying level",
+                "translation_key": "humidifier_level"
             },
             {
                 "key": "moodlighting",
-                "device_class": "tuya__humidifier_moodlighting",
                 "entity_category": "config",
                 "icon": "mdi:lightbulb-multiple",
-                "name": "Moodlighting"
+                "name": "Moodlighting",
+                "translation_key": "humidifier_moodlighting"
             },
             {
                 "key": "countdown",
-                "device_class": "tuya__countdown",
                 "entity_category": "config",
                 "icon": "mdi:timer-cog-outline",
-                "name": "Countdown"
+                "name": "Countdown",
+                "translation_key": "countdown"
             },
             {
                 "key": "countdown_set",
-                "device_class": "tuya__countdown",
                 "entity_category": "config",
                 "icon": "mdi:timer-cog-outline",
-                "name": "Countdown"
+                "name": "Countdown",
+                "translation_key": "countdown"
             }
         ],
         "sensor": [
@@ -2450,6 +2450,38 @@
                         "type": null
                     }
                 }
+            },
+            {
+                "key": "light",
+                "default_color_type": {
+                    "h_type": {
+                        "dpcode": "colour_data_hsv",
+                        "min": 1,
+                        "max": 360,
+                        "scale": 0,
+                        "step": 1,
+                        "unit": null,
+                        "type": null
+                    },
+                    "s_type": {
+                        "dpcode": "colour_data_hsv",
+                        "min": 1,
+                        "max": 255,
+                        "scale": 0,
+                        "step": 1,
+                        "unit": null,
+                        "type": null
+                    },
+                    "v_type": {
+                        "dpcode": "colour_data_hsv",
+                        "min": 1,
+                        "max": 255,
+                        "scale": 0,
+                        "step": 1,
+                        "unit": null,
+                        "type": null
+                    }
+                }
             }
         ],
         "fan": true
@@ -2574,15 +2606,15 @@
         "select": [
             {
                 "key": "relay_status",
-                "device_class": "tuya__relay_status",
                 "entity_category": "config",
-                "name": "Power on behavior"
+                "name": "Power on behavior",
+                "translation_key": "relay_status"
             },
             {
                 "key": "light_mode",
-                "device_class": "tuya__light_mode",
                 "entity_category": "config",
-                "name": "Indicator light mode"
+                "name": "Indicator light mode",
+                "translation_key": "light_mode"
             }
         ],
         "sensor": [
@@ -2852,44 +2884,44 @@
         "select": [
             {
                 "key": "ipc_work_mode",
-                "device_class": "tuya__ipc_work_mode",
                 "entity_category": "config",
-                "name": "IPC mode"
+                "name": "IPC mode",
+                "translation_key": "ipc_work_mode"
             },
             {
                 "key": "decibel_sensitivity",
-                "device_class": "tuya__decibel_sensitivity",
                 "entity_category": "config",
                 "icon": "mdi:volume-vibrate",
-                "name": "Sound detection densitivity"
+                "name": "Sound detection densitivity",
+                "translation_key": "decibel_sensitivity"
             },
             {
                 "key": "record_mode",
-                "device_class": "tuya__record_mode",
                 "entity_category": "config",
                 "icon": "mdi:record-rec",
-                "name": "Record mode"
+                "name": "Record mode",
+                "translation_key": "record_mode"
             },
             {
                 "key": "basic_nightvision",
-                "device_class": "tuya__basic_nightvision",
                 "entity_category": "config",
                 "icon": "mdi:theme-light-dark",
-                "name": "Night vision"
+                "name": "Night vision",
+                "translation_key": "basic_nightvision"
             },
             {
                 "key": "basic_anti_flicker",
-                "device_class": "tuya__basic_anti_flickr",
                 "entity_category": "config",
                 "icon": "mdi:image-outline",
-                "name": "Anti-flicker"
+                "name": "Anti-flicker",
+                "translation_key": "basic_anti_flicker"
             },
             {
                 "key": "motion_sensitivity",
-                "device_class": "tuya__motion_sensitivity",
                 "entity_category": "config",
                 "icon": "mdi:motion-sensor",
-                "name": "Motion detection sensitivity"
+                "name": "Motion detection sensitivity",
+                "translation_key": "motion_sensitivity"
             }
         ],
         "sensor": [
@@ -3144,33 +3176,33 @@
         "select": [
             {
                 "key": "relay_status",
-                "device_class": "tuya__relay_status",
                 "entity_category": "config",
-                "name": "Power on behavior"
+                "name": "Power on behavior",
+                "translation_key": "relay_status"
             },
             {
                 "key": "light_mode",
-                "device_class": "tuya__light_mode",
                 "entity_category": "config",
-                "name": "Indicator light mode"
+                "name": "Indicator light mode",
+                "translation_key": "light_mode"
             },
             {
                 "key": "led_type_1",
-                "device_class": "tuya__led_type",
                 "entity_category": "config",
-                "name": "Light source type"
+                "name": "Light source type",
+                "translation_key": "led_type"
             },
             {
                 "key": "led_type_2",
-                "device_class": "tuya__led_type",
                 "entity_category": "config",
-                "name": "Light 2 source type"
+                "name": "Light 2 source type",
+                "translation_key": "led_type"
             },
             {
                 "key": "led_type_3",
-                "device_class": "tuya__led_type",
                 "entity_category": "config",
-                "name": "Light 3 source type"
+                "name": "Light 3 source type",
+                "translation_key": "led_type"
             }
         ]
     },
@@ -3313,15 +3345,15 @@
         "select": [
             {
                 "key": "led_type_1",
-                "device_class": "tuya__led_type",
                 "entity_category": "config",
-                "name": "Light source type"
+                "name": "Light source type",
+                "translation_key": "led_type"
             },
             {
                 "key": "led_type_2",
-                "device_class": "tuya__led_type",
                 "entity_category": "config",
-                "name": "Light 2 source type"
+                "name": "Light 2 source type",
+                "translation_key": "led_type"
             }
         ]
     },
@@ -3576,31 +3608,31 @@
         "select": [
             {
                 "key": "fan_vertical",
-                "device_class": "tuya__fan_angle",
                 "entity_category": "config",
                 "icon": "mdi:format-vertical-align-center",
-                "name": "Vertical swing flap angle"
+                "name": "Vertical swing flap angle",
+                "translation_key": "fan_angle"
             },
             {
                 "key": "fan_horizontal",
-                "device_class": "tuya__fan_angle",
                 "entity_category": "config",
                 "icon": "mdi:format-horizontal-align-center",
-                "name": "Horizontal swing flap angle"
+                "name": "Horizontal swing flap angle",
+                "translation_key": "fan_angle"
             },
             {
                 "key": "countdown",
-                "device_class": "tuya__countdown",
                 "entity_category": "config",
                 "icon": "mdi:timer-cog-outline",
-                "name": "Countdown"
+                "name": "Countdown",
+                "translation_key": "countdown"
             },
             {
                 "key": "countdown_set",
-                "device_class": "tuya__countdown",
                 "entity_category": "config",
                 "icon": "mdi:timer-cog-outline",
-                "name": "Countdown"
+                "name": "Countdown",
+                "translation_key": "countdown"
             }
         ],
         "sensor": [
@@ -3692,15 +3724,15 @@
         "select": [
             {
                 "key": "relay_status",
-                "device_class": "tuya__relay_status",
                 "entity_category": "config",
-                "name": "Power on behavior"
+                "name": "Power on behavior",
+                "translation_key": "relay_status"
             },
             {
                 "key": "light_mode",
-                "device_class": "tuya__light_mode",
                 "entity_category": "config",
-                "name": "Indicator light mode"
+                "name": "Indicator light mode",
+                "translation_key": "light_mode"
             }
         ],
         "sensor": [
@@ -3834,15 +3866,15 @@
         "select": [
             {
                 "key": "relay_status",
-                "device_class": "tuya__relay_status",
                 "entity_category": "config",
-                "name": "Power on behavior"
+                "name": "Power on behavior",
+                "translation_key": "relay_status"
             },
             {
                 "key": "light_mode",
-                "device_class": "tuya__light_mode",
                 "entity_category": "config",
-                "name": "Indicator light mode"
+                "name": "Indicator light mode",
+                "translation_key": "light_mode"
             }
         ],
         "sensor": [
@@ -3990,7 +4022,6 @@
             },
             {
                 "key": "status",
-                "device_class": "tuya__status",
                 "entity_registry_enabled_default": true,
                 "name": "Status"
             }
@@ -4090,9 +4121,9 @@
             },
             {
                 "key": "status",
-                "device_class": "tuya__status",
                 "entity_registry_enabled_default": true,
-                "name": "Status"
+                "name": "Status",
+                "translation_key": "status"
             },
             {
                 "key": "remain_time",
@@ -4169,9 +4200,9 @@
         "select": [
             {
                 "key": "mode",
-                "device_class": "tuya__fingerbot_mode",
                 "entity_category": "config",
-                "name": "Mode"
+                "name": "Mode",
+                "translation_key": "fingerbot_mode"
             }
         ],
         "sensor": [
@@ -4220,15 +4251,15 @@
         "select": [
             {
                 "key": "relay_status",
-                "device_class": "tuya__relay_status",
                 "entity_category": "config",
-                "name": "Power on behavior"
+                "name": "Power on behavior",
+                "translation_key": "relay_status"
             },
             {
                 "key": "light_mode",
-                "device_class": "tuya__light_mode",
                 "entity_category": "config",
-                "name": "Indicator light mode"
+                "name": "Indicator light mode",
+                "translation_key": "light_mode"
             }
         ],
         "sensor": [
@@ -4287,17 +4318,17 @@
         "select": [
             {
                 "key": "countdown",
-                "device_class": "tuya__countdown",
                 "entity_category": "config",
                 "icon": "mdi:timer-cog-outline",
-                "name": "Countdown"
+                "name": "Countdown",
+                "translation_key": "countdown"
             },
             {
                 "key": "countdown_set",
-                "device_class": "tuya__countdown",
                 "entity_category": "config",
                 "icon": "mdi:timer-cog-outline",
-                "name": "Countdown"
+                "name": "Countdown",
+                "translation_key": "countdown"
             }
         ],
         "sensor": [
@@ -4362,10 +4393,10 @@
             },
             {
                 "key": "air_quality",
-                "device_class": "tuya__air_quality",
                 "entity_registry_enabled_default": true,
                 "icon": "mdi:air-filter",
-                "name": "Air quality"
+                "name": "Air quality",
+                "translation_key": "air_quality"
             }
         ],
         "switch": [
@@ -4680,6 +4711,134 @@
             {
                 "key": "switch",
                 "name": "Switch"
+            }
+        ]
+    },
+    "ggq": {
+        "sensor": [
+            {
+                "key": "smart_weather",
+                "device_class": "tuya__weather_condition",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:sun-wireless",
+                "name": "Smart Weather"
+            }
+        ],
+        "switch": [
+            {
+                "key": "start",
+                "icon": "mdi:water-pump",
+                "name": "Start"
+            }
+        ]
+    },
+    "sfkzq": {
+        "sensor": [
+            {
+                "key": "weather",
+                "device_class": "tuya__weather_condition",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:sun-wireless",
+                "name": "Weather"
+            }
+        ],
+        "switch": [
+            {
+                "key": "areaone",
+                "icon": "mdi:water-pump",
+                "name": "Zone 1"
+            },
+            {
+                "key": "areatwo",
+                "icon": "mdi:water-pump",
+                "name": "Zone 2"
+            },
+            {
+                "key": "areathree",
+                "icon": "mdi:water-pump",
+                "name": "Zone 3"
+            },
+            {
+                "key": "areafour",
+                "icon": "mdi:water-pump",
+                "name": "Zone 4"
+            },
+            {
+                "key": "areafive",
+                "icon": "mdi:water-pump",
+                "name": "Zone 5"
+            },
+            {
+                "key": "areasix",
+                "icon": "mdi:water-pump",
+                "name": "Zone 6"
+            },
+            {
+                "key": "areaseven",
+                "icon": "mdi:water-pump",
+                "name": "Zone 7"
+            },
+            {
+                "key": "areaeight",
+                "icon": "mdi:water-pump",
+                "name": "Zone 8"
+            },
+            {
+                "key": "quickstart",
+                "icon": "mdi:water-pump",
+                "name": "Quick Start"
+            }
+        ]
+    },
+    "qt": {
+        "sensor": [
+            {
+                "key": "weightcount",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:cached",
+                "name": "Weight Count"
+            },
+            {
+                "key": "weight",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:scale-bathroom",
+                "name": "Weight",
+                "native_unit_of_measurement": "kg"
+            },
+            {
+                "key": "LResistance",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:hand-back-left",
+                "name": "Left Hand Resistance",
+                "native_unit_of_measurement": "\u03a9"
+            },
+            {
+                "key": "LLR",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:foot-print",
+                "name": "Left Leg Resistance",
+                "native_unit_of_measurement": "\u03a9"
+            },
+            {
+                "key": "RHR",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:hand-back-right",
+                "name": "Right Hand Resistance",
+                "native_unit_of_measurement": "\u03a9"
+            },
+            {
+                "key": "RLR",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:foot-print",
+                "name": "Right Leg Resistance",
+                "native_unit_of_measurement": "\u03a9"
+            },
+            {
+                "key": "BR",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:omega",
+                "name": "Body Resistance",
+                "native_unit_of_measurement": "\u03a9"
             }
         ]
     },
