@@ -35,7 +35,6 @@ from .helpers.const import (
     TUYA_DISCOVERY_NEW,
     TUYA_HA_SIGNAL_UPDATE_ENTITY,
 )
-from .helpers.enums.dp_code import DPCode
 from .helpers.tuya_legacy_mapping import TUYA_LEGACY_CATEGORIES, TUYA_LEGACY_MAPPING
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .managers.tuya_device_listener import DeviceListener

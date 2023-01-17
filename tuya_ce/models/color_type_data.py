@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
-from ..helpers.enums.dp_code import DPCode
+from homeassistant.components.tuya import DPCode
+
 from .base import IntegerTypeData
 
 

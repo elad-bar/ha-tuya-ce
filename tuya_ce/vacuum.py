@@ -6,6 +6,8 @@ from typing import Any
 
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
+from homeassistant.components.tuya import DPCode
+from homeassistant.components.tuya.const import DPType
 from homeassistant.components.vacuum import StateVacuumEntity, VacuumEntityFeature
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import STATE_PAUSED, Platform
@@ -13,8 +15,6 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .helpers.const import TUYA_MODE_RETURN_HOME, TUYA_STATUS_TO_HA
-from .helpers.enums.dp_code import DPCode
-from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import EnumTypeData, IntegerTypeData, TuyaEntity
 

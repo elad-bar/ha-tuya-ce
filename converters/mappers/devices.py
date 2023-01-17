@@ -4,8 +4,6 @@ from __future__ import annotations
 import json
 import logging
 
-from converters.helpers.enhanced_json_encoder import EnhancedJSONEncoder
-from converters.mappers.base import TuyaBaseConverter
 from homeassistant.components.switch import SwitchEntityDescription
 from homeassistant.components.tuya.alarm_control_panel import ALARM
 from homeassistant.components.tuya.binary_sensor import BINARY_SENSORS
@@ -22,11 +20,13 @@ from homeassistant.components.tuya.sensor import SENSORS, TuyaSensorEntityDescri
 from homeassistant.components.tuya.siren import SIRENS
 from homeassistant.components.tuya.switch import SWITCHES
 from homeassistant.const import Platform, UnitOfMass
-from tuya_ce import DPCode
-from tuya_ce.helpers.const import ELECTRIC_RESISTANCE_OHM
-from tuya_ce.helpers.enums.tuya_device_class import TuyaDeviceClass
-from tuya_ce.helpers.tuya_mapping import VACUUMS
+from tuya_ce.helpers.const import ELECTRIC_RESISTANCE_OHM, WEATHER_CONDITION
 from tuya_ce.models.platform_fields import PlatformFields
+
+from ..helpers.dp_code import ExtendedDPCode
+from ..helpers.enhanced_json_encoder import EnhancedJSONEncoder
+from ..helpers.tuya_mapping import VACUUMS
+from ..mappers.base import TuyaBaseConverter
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -125,60 +125,60 @@ class TuyaDevices(TuyaBaseConverter):
     def _add_custom_devices():
         SENSORS["ggq"] = (
             TuyaSensorEntityDescription(
-                key=DPCode.SMART_WEATHER,
+                key=ExtendedDPCode.SMART_WEATHER,
                 name="Smart Weather",
                 icon="mdi:sun-wireless",
-                device_class=TuyaDeviceClass.WEATHER_CONDITION,
+                device_class=WEATHER_CONDITION,
             ),
         )
 
         SENSORS["sfkzq"] = (
             TuyaSensorEntityDescription(
-                key=DPCode.WEATHER,
+                key=ExtendedDPCode.WEATHER,
                 name="Weather",
                 icon="mdi:sun-wireless",
-                device_class=TuyaDeviceClass.WEATHER_CONDITION,
+                device_class=WEATHER_CONDITION,
             ),
         )
 
         SENSORS["qt"] = (
             TuyaSensorEntityDescription(
-                key=DPCode.WEIGHT_COUNT,
+                key=ExtendedDPCode.WEIGHT_COUNT,
                 name="Weight Count",
                 icon="mdi:cached",
             ),
             TuyaSensorEntityDescription(
-                key=DPCode.WEIGHT,
+                key=ExtendedDPCode.WEIGHT,
                 name="Weight",
                 icon="mdi:scale-bathroom",
                 native_unit_of_measurement=UnitOfMass.KILOGRAMS,
             ),
             TuyaSensorEntityDescription(
-                key=DPCode.LEFT_HAND_RESISTANCE,
+                key=ExtendedDPCode.LEFT_HAND_RESISTANCE,
                 name="Left Hand Resistance",
                 icon="mdi:hand-back-left",
                 native_unit_of_measurement=ELECTRIC_RESISTANCE_OHM,
             ),
             TuyaSensorEntityDescription(
-                key=DPCode.LEFT_LEG_RESISTANCE,
+                key=ExtendedDPCode.LEFT_LEG_RESISTANCE,
                 name="Left Leg Resistance",
                 icon="mdi:foot-print",
                 native_unit_of_measurement=ELECTRIC_RESISTANCE_OHM,
             ),
             TuyaSensorEntityDescription(
-                key=DPCode.RIGHT_HAND_RESISTANCE,
+                key=ExtendedDPCode.RIGHT_HAND_RESISTANCE,
                 name="Right Hand Resistance",
                 icon="mdi:hand-back-right",
                 native_unit_of_measurement=ELECTRIC_RESISTANCE_OHM,
             ),
             TuyaSensorEntityDescription(
-                key=DPCode.RIGHT_LEG_RESISTANCE,
+                key=ExtendedDPCode.RIGHT_LEG_RESISTANCE,
                 name="Right Leg Resistance",
                 icon="mdi:foot-print",
                 native_unit_of_measurement=ELECTRIC_RESISTANCE_OHM,
             ),
             TuyaSensorEntityDescription(
-                key=DPCode.BODY_RESISTANCE,
+                key=ExtendedDPCode.BODY_RESISTANCE,
                 name="Body Resistance",
                 icon="mdi:omega",
                 native_unit_of_measurement=ELECTRIC_RESISTANCE_OHM,
@@ -187,47 +187,47 @@ class TuyaDevices(TuyaBaseConverter):
 
         SWITCHES["sfkzq"] = (
             SwitchEntityDescription(
-                key=DPCode.AREA_1,
+                key=ExtendedDPCode.AREA_1,
                 name="Zone 1",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.AREA_2,
+                key=ExtendedDPCode.AREA_2,
                 name="Zone 2",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.AREA_3,
+                key=ExtendedDPCode.AREA_3,
                 name="Zone 3",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.AREA_4,
+                key=ExtendedDPCode.AREA_4,
                 name="Zone 4",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.AREA_5,
+                key=ExtendedDPCode.AREA_5,
                 name="Zone 5",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.AREA_6,
+                key=ExtendedDPCode.AREA_6,
                 name="Zone 6",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.AREA_7,
+                key=ExtendedDPCode.AREA_7,
                 name="Zone 7",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.AREA_8,
+                key=ExtendedDPCode.AREA_8,
                 name="Zone 8",
                 icon="mdi:water-pump",
             ),
             SwitchEntityDescription(
-                key=DPCode.QUICK_START,
+                key=ExtendedDPCode.QUICK_START,
                 name="Quick Start",
                 icon="mdi:water-pump",
             ),
@@ -235,7 +235,7 @@ class TuyaDevices(TuyaBaseConverter):
 
         SWITCHES["ggq"] = (
             SwitchEntityDescription(
-                key=DPCode.START,
+                key=ExtendedDPCode.START,
                 name="Start",
                 icon="mdi:water-pump",
             ),

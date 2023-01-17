@@ -11,6 +11,8 @@ from homeassistant.components.fan import (
     FanEntity,
     FanEntityFeature,
 )
+from homeassistant.components.tuya import DPCode
+from homeassistant.components.tuya.const import DPType
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
@@ -20,8 +22,6 @@ from homeassistant.util.percentage import (
     percentage_to_ordered_list_item,
 )
 
-from .helpers.enums.dp_code import DPCode
-from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import EnumTypeData, IntegerTypeData, TuyaEntity
 

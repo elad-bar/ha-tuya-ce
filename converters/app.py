@@ -2,12 +2,10 @@
 from __future__ import annotations
 
 import asyncio
-import json
 import logging
 import os
 import sys
 
-from converters.helpers.enhanced_json_encoder import EnhancedJSONEncoder
 from converters.mappers.countries import TuyaCountries
 from converters.mappers.devices import TuyaDevices
 from converters.mappers.units import TuyaUnits

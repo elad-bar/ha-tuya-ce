@@ -6,13 +6,13 @@ from abc import ABC
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.number import NumberEntity, NumberEntityDescription
+from homeassistant.components.tuya.const import DPType
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .helpers.const import DOMAIN
-from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
 

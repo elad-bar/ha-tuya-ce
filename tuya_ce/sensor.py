@@ -5,6 +5,7 @@ from tuya_iot import TuyaDevice, TuyaDeviceManager
 from tuya_iot.device import TuyaDeviceStatusRange
 
 from homeassistant.components.sensor import SensorEntity
+from homeassistant.components.tuya.const import DPCode, DPType
 from homeassistant.components.tuya.sensor import TuyaSensorEntityDescription
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
@@ -13,8 +14,6 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import StateType
 
 from .helpers.const import DOMAIN
-from .helpers.enums.dp_code import DPCode
-from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import ElectricityTypeData, EnumTypeData, IntegerTypeData, TuyaEntity
 from .models.unit_of_measurement import ExtendedUnitOfMeasurement, UnitOfMeasurement

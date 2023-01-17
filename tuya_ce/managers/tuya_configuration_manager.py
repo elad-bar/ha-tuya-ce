@@ -16,7 +16,6 @@ from ..helpers.const import (
     ACCESS_MODES,
     BASE_URL,
     COUNTRIES_CONFIG,
-    DEVICE_CLASS_CONFIG,
     DEVICE_CONFIG_MANAGER,
     DEVICES_CONFIG,
     DOMAIN,
@@ -140,7 +139,8 @@ class TuyaConfigurationManager:
                             is_enabled = self._platform_manager.is_enabled(domain, category_config, device)
 
                             if is_enabled:
-                                entity_description = self._platform_manager.get_entity_description(domain, platform_item)
+                                entity_description = self._platform_manager.get_entity_description(domain,
+                                                                                                   platform_item)
 
                                 if entity_description is None:
                                     _LOGGER.debug(f"Running initializer, Domain: {domain}")

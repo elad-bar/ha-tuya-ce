@@ -1,6 +1,7 @@
 """Support for Tuya Climate."""
 from __future__ import annotations
 
+from abc import ABC
 from typing import Any
 
 from tuya_iot import TuyaDevice, TuyaDeviceManager
@@ -15,17 +16,17 @@ from homeassistant.components.climate import (
     ClimateEntityFeature,
     HVACMode,
 )
+from homeassistant.components.tuya import DPCode
+from homeassistant.components.tuya.climate import TuyaClimateEntityDescription
+from homeassistant.components.tuya.const import DPType
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import TEMP_CELSIUS, TEMP_FAHRENHEIT, Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .helpers.const import TUYA_HVAC_TO_HA
-from .helpers.enums.dp_code import DPCode
-from .helpers.enums.dp_type import DPType
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import IntegerTypeData, TuyaEntity
-from .models.tuya_entity_descriptors import TuyaClimateEntityDescription
 
 
 async def async_setup_entry(
@@ -39,7 +40,7 @@ async def async_setup_entry(
                                     TuyaClimateEntity.create_entity)
 
 
-class TuyaClimateEntity(TuyaEntity, ClimateEntity):
+class TuyaClimateEntity(TuyaEntity, ClimateEntity, ABC):
     """Tuya Climate Device."""
 
     _current_humidity: IntegerTypeData | None = None

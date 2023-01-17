@@ -1,6 +1,8 @@
 """Support for Tuya Alarm."""
 from __future__ import annotations
 
+from abc import ABC
+
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
 from homeassistant.components.alarm_control_panel import (
@@ -8,13 +10,13 @@ from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntityDescription,
     AlarmControlPanelEntityFeature,
 )
+from homeassistant.components.tuya.alarm_control_panel import STATE_MAPPING, Mode
+from homeassistant.components.tuya.const import DPType
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .helpers.enums.dp_type import DPType
-from .helpers.enums.mode import STATE_MAPPING, Mode
 from .managers.tuya_configuration_manager import TuyaConfigurationManager
 from .models.base import TuyaEntity
 
@@ -30,7 +32,7 @@ async def async_setup_entry(
                                     TuyaAlarmEntity.create_entity)
 
 
-class TuyaAlarmEntity(TuyaEntity, AlarmControlPanelEntity):
+class TuyaAlarmEntity(TuyaEntity, AlarmControlPanelEntity, ABC):
     """Tuya Alarm Entity."""
 
     _attr_icon = "mdi:security"
