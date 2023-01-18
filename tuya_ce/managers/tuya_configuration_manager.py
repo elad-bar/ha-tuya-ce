@@ -136,13 +136,10 @@ class TuyaConfigurationManager:
                         for platform_item in platform_data:
                             _LOGGER.debug(f"Loading domain {domain}, Details: {platform_item}")
 
-                            is_enabled = self._platform_manager.is_enabled(domain, category_config, device)
+                            platform_details = self._platform_manager.get_platform_details(domain, category_config, device, platform_item)
 
-                            if is_enabled:
-                                entity_description = self._platform_manager.get_entity_description(domain,
-                                                                                                   platform_item)
-
-                                if entity_description is None:
+                            if platform_details.enabled:
+                                if platform_details.simple:
                                     _LOGGER.debug(f"Running initializer, Domain: {domain}")
                                     instance = initializer(self._hass, device, device_manager)
 
@@ -150,10 +147,10 @@ class TuyaConfigurationManager:
                                     _LOGGER.debug(
                                         f"Running initializer, "
                                         f"Domain: {domain}, "
-                                        f"Entity_description: {entity_description}"
+                                        f"Entity_description: {platform_details.entity_description}"
                                     )
 
-                                    instance = initializer(self._hass, device, device_manager, entity_description)
+                                    instance = initializer(self._hass, device, device_manager, platform_details.entity_description)
 
                                 if instance is not None:
                                     entities.append(instance)

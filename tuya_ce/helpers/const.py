@@ -57,7 +57,7 @@ TUYA_RESPONSE_SUCCESS = "success"
 TUYA_RESPONSE_PLATFORM_URL = "platform_url"
 
 TUYA_SMART_APP = "tuyaSmart"
-SMARTLIFE_APP = "smartlife"
+SMART_LIFE_APP = "smartlife"
 
 ELECTRIC_RESISTANCE_OHM = "Ω"
 
@@ -163,3 +163,26 @@ STATE_MAPPING: dict[str, str] = {
 }
 
 WEATHER_CONDITION = "tuya_ce__weather_condition"
+
+PLATFORM_FIELDS = {
+    Platform.ALARM_CONTROL_PANEL: ["name"],
+    Platform.BINARY_SENSOR: ["dpcode", "name", "icon", "on_value",
+                             "device_class", "entity_category"],
+    Platform.BUTTON: ["name", "icon", "entity_category"],
+    Platform.CLIMATE: ["switch_only_hvac_mode"],
+    Platform.COVER: ["name", "current_state", "current_position", "current_position",
+                     "set_position", "device_class", "open_instruction_value", "close_instruction_value",
+                     "stop_instruction_value"],
+    Platform.HUMIDIFIER: ["dpcode", "humidity", "device_class"],
+    Platform.LIGHT: ["name", "brightness", "brightness_max", "brightness_min",
+                     "device_class", "color_mode", "color_temp", "entity_category",
+                     "default_color_type", "color_data"],
+    Platform.NUMBER: ["name", "device_class", "entity_category", "icon",
+                      "native_unit_of_measurement"],
+    Platform.SELECT: ["name", "entity_category", "icon", "translation_key"],
+    Platform.SENSOR: ["name", "device_class", "state_class", "entity_category",
+                      "icon", "native_unit_of_measurement", "entity_registry_enabled_default", "subkey",
+                      "translation_key"],
+    Platform.SIREN: ["name"],
+    Platform.SWITCH: ["name", "icon", "entity_category", "device_class"]
+}
