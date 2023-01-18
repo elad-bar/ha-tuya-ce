@@ -1,16 +1,16 @@
 from __future__ import annotations
 
-import logging
 from collections.abc import Callable
+import logging
 from typing import Any
 
-from homeassistant.components.climate import HVACMode
 from tuya_iot import TuyaDeviceManager
 
 from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntityDescription,
 )
 from homeassistant.components.button import ButtonEntityDescription
+from homeassistant.components.climate import HVACMode
 from homeassistant.components.number import NumberEntityDescription
 from homeassistant.components.select import SelectEntityDescription
 from homeassistant.components.siren import SirenEntityDescription

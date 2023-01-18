@@ -20,7 +20,11 @@ from homeassistant.components.tuya.sensor import SENSORS, TuyaSensorEntityDescri
 from homeassistant.components.tuya.siren import SIRENS
 from homeassistant.components.tuya.switch import SWITCHES
 from homeassistant.const import Platform, UnitOfMass
-from tuya_ce.helpers.const import ELECTRIC_RESISTANCE_OHM, WEATHER_CONDITION, PLATFORM_FIELDS
+from tuya_ce.helpers.const import (
+    ELECTRIC_RESISTANCE_OHM,
+    PLATFORM_FIELDS,
+    WEATHER_CONDITION,
+)
 
 from ..helpers.dp_code import ExtendedDPCode
 from ..helpers.enhanced_json_encoder import EnhancedJSONEncoder
