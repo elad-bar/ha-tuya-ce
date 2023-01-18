@@ -20,8 +20,11 @@ from homeassistant.components.tuya.sensor import SENSORS, TuyaSensorEntityDescri
 from homeassistant.components.tuya.siren import SIRENS
 from homeassistant.components.tuya.switch import SWITCHES
 from homeassistant.const import Platform, UnitOfMass
-from tuya_ce.helpers.const import ELECTRIC_RESISTANCE_OHM, WEATHER_CONDITION
-from tuya_ce.models.platform_fields import PlatformFields
+from tuya_ce.helpers.const import (
+    ELECTRIC_RESISTANCE_OHM,
+    PLATFORM_FIELDS,
+    WEATHER_CONDITION,
+)
 
 from ..helpers.dp_code import ExtendedDPCode
 from ..helpers.enhanced_json_encoder import EnhancedJSONEncoder
@@ -62,21 +65,6 @@ class TuyaDevices(TuyaBaseConverter):
             Platform.SWITCH: SWITCHES,
         }
 
-        platform_fields = {
-            Platform.ALARM_CONTROL_PANEL: PlatformFields.ALARM_CONTROL_PANEL,
-            Platform.BINARY_SENSOR: PlatformFields.BINARY_SENSOR,
-            Platform.BUTTON: PlatformFields.BUTTON,
-            Platform.CLIMATE: PlatformFields.CLIMATE,
-            Platform.COVER: PlatformFields.COVER,
-            Platform.HUMIDIFIER: PlatformFields.HUMIDIFIER,
-            Platform.LIGHT: PlatformFields.LIGHT,
-            Platform.NUMBER: PlatformFields.NUMBER,
-            Platform.SELECT: PlatformFields.SELECT,
-            Platform.SENSOR: PlatformFields.SENSOR,
-            Platform.SIREN: PlatformFields.SIREN,
-            Platform.SWITCH: PlatformFields.SWITCH,
-        }
-
         devices = {}
 
         for domain in data_items:
@@ -88,7 +76,7 @@ class TuyaDevices(TuyaBaseConverter):
                 if device_category_key not in devices:
                     devices[device_category_key] = {}
 
-                domain_fields = platform_fields.get(domain, [])
+                domain_fields = PLATFORM_FIELDS.get(domain, [])
 
                 device_category_items_json = json.dumps(
                     device_category_items, cls=EnhancedJSONEncoder, indent=4

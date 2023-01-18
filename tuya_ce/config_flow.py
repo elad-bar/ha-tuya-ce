@@ -20,7 +20,7 @@ from .helpers.const import (
     CONF_USERNAME,
     DEVICE_CONFIG_MANAGER,
     DOMAIN,
-    SMARTLIFE_APP,
+    SMART_LIFE_APP,
     TUYA_RESPONSE_CODE,
     TUYA_RESPONSE_MSG,
     TUYA_RESPONSE_PLATFORM_URL,
@@ -67,7 +67,7 @@ class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             CONF_COUNTRY_CODE: country.get("country_code"),
         }
 
-        for app_type in ("", TUYA_SMART_APP, SMARTLIFE_APP):
+        for app_type in ("", TUYA_SMART_APP, SMART_LIFE_APP):
             data[CONF_APP_TYPE] = app_type
             if data[CONF_APP_TYPE] == "":
                 data[CONF_AUTH_TYPE] = AuthType.CUSTOM
