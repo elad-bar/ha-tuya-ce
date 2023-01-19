@@ -35,17 +35,22 @@ _LOGGER = logging.getLogger(__package__)
 
 class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Tuya Config Flow."""
+    def __init__(self):
+        self._tuya_device_configuration_manager: TuyaConfigurationManager = None
 
-    @property
-    def tuya_device_configuration_manager(self) -> TuyaConfigurationManager:
-        integration_data = self.hass.data[DOMAIN]
-        manager = integration_data.get(DEVICE_CONFIG_MANAGER)
+    async def load_tuya_device_configuration_manager(self):
+        if DOMAIN not in self.hass.data:
+            _LOGGER.debug("Step user")
 
-        return manager
+            self.hass.data.setdefault(DOMAIN, {})
+
+        manager = await TuyaConfigurationManager.load(self.hass)
+
+        self._tuya_device_configuration_manager = manager
 
     @property
     def countries(self) -> list:
-        countries = self.tuya_device_configuration_manager.countries
+        countries = self._tuya_device_configuration_manager.countries
 
         return countries
 
@@ -54,7 +59,7 @@ class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         country = [
             country
             for country in self.countries
-            if country.get("country_code") == user_input[CONF_COUNTRY_CODE]
+            if country.get("name") == user_input[CONF_COUNTRY_CODE]
         ][0]
 
         data = {
@@ -98,6 +103,8 @@ class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     async def async_step_user(self, user_input=None):
         """Step user."""
+        await self.load_tuya_device_configuration_manager()
+
         errors = {}
         placeholders = {}
 

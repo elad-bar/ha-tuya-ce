@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Callable
 import logging
+import sys
 from typing import Any
 
 from tuya_iot import TuyaDeviceManager
@@ -24,7 +25,8 @@ from homeassistant.components.tuya.humidifier import TuyaHumidifierEntityDescrip
 from homeassistant.components.tuya.light import TuyaLightEntityDescription
 from homeassistant.components.tuya.sensor import TuyaSensorEntityDescription
 from homeassistant.const import Platform
-from homeassistant.helpers.entity import EntityDescription
+from homeassistant.helpers.entity import EntityCategory, EntityDescription
+from homeassistant.helpers.typing import UNDEFINED
 
 from .. import PLATFORMS
 from ..helpers.const import PLATFORM_FIELDS
@@ -54,8 +56,8 @@ class TuyaPlatformManager:
     def simple_platforms(self) -> list[str]:
         return self._simple_platforms
 
-    def get_platform_details(self, platform: str, category_config, device, platform_item) -> PlatformDetails:
-        is_enabled = self._is_enabled(platform, category_config, device)
+    def get_platform_details(self, platform: str, device, platform_item) -> PlatformDetails:
+        is_enabled = self._is_enabled(platform, platform_item, device)
         is_simple = self._is_simple_platform(platform) if is_enabled else False
         entity_description = None if is_simple else self._get_entity_description(platform, platform_item)
 
@@ -69,15 +71,23 @@ class TuyaPlatformManager:
                     device: TuyaDeviceManager) -> bool:
 
         result = False
-        is_platform_supported = PLATFORMS.get(platform)
 
-        if is_platform_supported:
-            validation = self._platform_validations.get(platform, self._default_validation)
+        try:
+            is_platform_supported = platform in PLATFORMS
 
-            result = validation(data, device)
+            if is_platform_supported:
+                validation = self._platform_validations.get(platform, self._default_validation)
 
-        else:
-            _LOGGER.warning(f"Platform {platform} is not supported")
+                result = validation(data, device)
+
+            else:
+                _LOGGER.warning(f"Platform {platform} is not supported")
+
+        except Exception as ex:
+            exc_type, exc_obj, tb = sys.exc_info()
+            line_number = tb.tb_lineno
+
+            _LOGGER.error(f"Failed to get is enabled for platform '{platform}', Error: {ex}, Line: {line_number}")
 
         return result
 
@@ -98,31 +108,38 @@ class TuyaPlatformManager:
                                 data: dict) -> EntityDescription | None:
 
         entity_description = None
-        is_simple = self._is_simple_platform(platform)
 
-        if is_simple is None:
-            _LOGGER.warning(f"Platform {platform} configuration was not found")
+        try:
+            is_simple = self._is_simple_platform(platform)
 
-        else:
-            platform_handler = self._platform_handlers.get(platform)
-
-            if platform_handler is None:
-                _LOGGER.debug(f"Loading platform {platform} without entity description")
+            if is_simple is None:
+                _LOGGER.warning(f"Platform {platform} configuration was not found")
 
             else:
-                _LOGGER.debug(f"Loading platform {platform} with entity description, Details: {data}")
+                platform_handler = self._platform_handlers.get(platform)
 
-                entity_description = platform_handler(data)
-                platform_fields = PLATFORM_FIELDS.get(platform)
+                if platform_handler  is not None:
+                    entity_description = platform_handler(data)
+                    platform_fields = PLATFORM_FIELDS.get(platform)
 
-                for key in platform_fields:
-                    value = data.get(key)
+                    for key in platform_fields:
+                        value = data.get(key)
 
-                    if value is None and key in self._entity_description_defaults:
-                        value = self._entity_description_defaults.get(key)
+                        if key in self._entity_description_defaults:
+                            value = self._entity_description_defaults.get(key)
 
-                    if hasattr(entity_description, key):
-                        setattr(entity_description, key, value)
+                        if value is not None and hasattr(entity_description, key):
+                            setattr(entity_description, key, value)
+
+        except Exception as ex:
+            exc_type, exc_obj, tb = sys.exc_info()
+            line_number = tb.tb_lineno
+
+            _LOGGER.error(
+                f"Failed to get is entity description for platform '{platform}', "
+                f"Error: {ex}, "
+                f"Line: {line_number}"
+            )
 
         return entity_description
 
@@ -133,7 +150,8 @@ class TuyaPlatformManager:
             "open_instruction_value": "open",
             "close_instruction_value": "close",
             "stop_instruction_value": "stop",
-            "on_value": True
+            "on_value": True,
+            "entity_category": None
         }
 
         return entity_description_defaults
@@ -163,8 +181,8 @@ class TuyaPlatformManager:
             Platform.FAN: lambda e, d: e,
             Platform.VACUUM: lambda e, d: e,
             Platform.ALARM_CONTROL_PANEL: lambda e, d: e,
-            Platform.BINARY_SENSOR: lambda e, d: e.key in d.status or e.dpcode in d.status,
-            Platform.COVER: lambda e, d: e.key in d.function or e.key in d.status_range
+            Platform.BINARY_SENSOR: lambda e, d: e.get("key") in d.status or e.get("dpcode") in d.status,
+            Platform.COVER: lambda e, d: e.get("key") in d.function or e.get("key") in d.status_range
         }
 
         return platforms

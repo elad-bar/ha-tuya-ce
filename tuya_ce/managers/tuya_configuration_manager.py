@@ -6,9 +6,7 @@ import logging
 import sys
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.storage import Store
 
@@ -22,7 +20,6 @@ from ..helpers.const import (
     SERVICE_UPDATE_REMOTE_CONFIGURATION,
     STORAGE_VERSION,
     TUYA_CONFIGURATIONS,
-    TUYA_DISCOVERY_NEW,
     TUYA_RELATED_DOMAINS,
     TUYA_SPECIAL_MAPPING,
     TUYA_TYPES_MAPPING,
@@ -117,57 +114,61 @@ class TuyaConfigurationManager:
                                 initializer) -> None:
 
         """Set up Tuya alarm dynamically through Tuya discovery."""
+        entities = []
+
         tuya_data = self.integration_data.get(entry.entry_id)
+
         device_manager = tuya_data.device_manager
 
-        @callback
-        def async_discover_device(device_ids: list[str]) -> None:
-            """Discover and add a discovered Tuya siren."""
-            entities = []
+        device_ids = [*device_manager.device_map]
 
-            for device_id in device_ids:
-                try:
-                    device = device_manager.device_map[device_id]
-                    category_config = self.devices.get(device.category)
+        for device_id in device_ids:
+            try:
+                device = device_manager.device_map[device_id]
+                category_settings = self.devices.get(device.category)
 
-                    if category_config is not None:
-                        platform_data = category_config.get(domain, [])
+                if category_settings is not None:
+                    platform_items = category_settings.get(domain, [])
 
-                        for platform_item in platform_data:
-                            _LOGGER.debug(f"Loading domain {domain}, Details: {platform_item}")
+                    for platform_item in platform_items:
+                        platform_details = self._platform_manager.get_platform_details(domain,
+                                                                                       device,
+                                                                                       platform_item)
 
-                            platform_details = self._platform_manager.get_platform_details(domain, category_config, device, platform_item)
+                        if platform_details.enabled:
+                            if platform_details.simple:
+                                _LOGGER.debug(f"Running initializer, Domain: {domain}")
+                                instance = initializer(self._hass, device, device_manager)
 
-                            if platform_details.enabled:
-                                if platform_details.simple:
-                                    _LOGGER.debug(f"Running initializer, Domain: {domain}")
-                                    instance = initializer(self._hass, device, device_manager)
+                            else:
+                                _LOGGER.debug(
+                                    f"Running initializer, "
+                                    f"Domain: {domain}, "
+                                    f"Entity_description: {platform_details.entity_description}"
+                                )
 
-                                else:
-                                    _LOGGER.debug(
-                                        f"Running initializer, "
-                                        f"Domain: {domain}, "
-                                        f"Entity_description: {platform_details.entity_description}"
-                                    )
+                                instance = initializer(self._hass, device, device_manager, platform_details.entity_description)
 
-                                    instance = initializer(self._hass, device, device_manager, platform_details.entity_description)
+                            if instance is not None:
+                                entities.append(instance)
 
-                                if instance is not None:
-                                    entities.append(instance)
+            except Exception as ex:
+                exc_type, exc_obj, tb = sys.exc_info()
+                line_number = tb.tb_lineno
 
-                except Exception as ex:
-                    exc_type, exc_obj, tb = sys.exc_info()
-                    line_number = tb.tb_lineno
+                _LOGGER.error(f"Failed to create {domain} entity, Error: {ex}, Line: {line_number}")
 
-                    _LOGGER.error(f"Failed to create {domain} entity, Error: {ex}, Line: {line_number}")
+        try:
+            if len(entities) > 0:
+                async_add_entities(entities)
 
-            async_add_entities(entities)
+        except Exception as ex:
+            exc_type, exc_obj, tb = sys.exc_info()
+            line_number = tb.tb_lineno
 
-        async_discover_device([*device_manager.device_map])
-
-        entry.async_on_unload(
-            async_dispatcher_connect(self._hass, TUYA_DISCOVERY_NEW, async_discover_device)
-        )
+            _LOGGER.error(
+                f"Failed to add entities for domain '{domain}', Entities: {entities}, Error: {ex}, Line: {line_number}"
+            )
 
     def perform_gap_analysis(self, diagnostic_data: dict):
         diagnostic_devices = diagnostic_data["devices"]

@@ -45,7 +45,11 @@ _LOGGER = logging.getLogger(__package__)
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Async setup hass config entry."""
+    _LOGGER.debug("Setup platform")
+
     hass.data.setdefault(DOMAIN, {})
+
+    _LOGGER.debug("Loading configuration manager")
 
     await TuyaConfigurationManager.load(hass)
 
