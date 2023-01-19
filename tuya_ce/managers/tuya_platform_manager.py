@@ -5,7 +5,6 @@ import logging
 import sys
 from typing import Any
 
-from homeassistant.helpers.typing import UNDEFINED
 from tuya_iot import TuyaDeviceManager
 
 from homeassistant.components.alarm_control_panel import (
@@ -26,7 +25,8 @@ from homeassistant.components.tuya.humidifier import TuyaHumidifierEntityDescrip
 from homeassistant.components.tuya.light import TuyaLightEntityDescription
 from homeassistant.components.tuya.sensor import TuyaSensorEntityDescription
 from homeassistant.const import Platform
-from homeassistant.helpers.entity import EntityDescription, EntityCategory
+from homeassistant.helpers.entity import EntityCategory, EntityDescription
+from homeassistant.helpers.typing import UNDEFINED
 
 from .. import PLATFORMS
 from ..helpers.const import PLATFORM_FIELDS
