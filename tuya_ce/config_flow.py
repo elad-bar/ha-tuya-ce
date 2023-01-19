@@ -36,7 +36,7 @@ _LOGGER = logging.getLogger(__package__)
 class TuyaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Tuya Config Flow."""
     def __init__(self):
-        self._tuya_device_configuration_manager: TuyaConfigurationManager = None
+        self._tuya_device_configuration_manager: TuyaConfigurationManager | None = None
 
     async def load_tuya_device_configuration_manager(self):
         if DOMAIN not in self.hass.data:
