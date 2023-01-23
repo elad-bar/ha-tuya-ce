@@ -4,7 +4,7 @@ import logging
 import os
 import sys
 
-from tuya_ce.helpers.const import (
+from custom_components.tuya_ce import (
     TUYA_RELATED_DOMAINS,
     TUYA_SPECIAL_MAPPING,
     TUYA_TYPES_MAPPING,

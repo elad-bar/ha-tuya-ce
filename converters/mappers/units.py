@@ -4,13 +4,13 @@ from __future__ import annotations
 import logging
 
 from converters.mappers.base import TuyaBaseConverter
-from homeassistant.components.sensor import SensorDeviceClass
-from homeassistant.components.tuya.const import UNITS
-from homeassistant.const import UnitOfMass
-from tuya_ce.models.unit_of_measurement import (
+from custom_components.tuya_ce.models.unit_of_measurement import (
     ExtendedUnitOfMeasurement,
     UnitOfMeasurement,
 )
+from homeassistant.components.sensor import SensorDeviceClass
+from homeassistant.components.tuya.const import UNITS
+from homeassistant.const import UnitOfMass
 
 _LOGGER = logging.getLogger(__name__)
 
