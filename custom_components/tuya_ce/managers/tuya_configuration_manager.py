@@ -10,22 +10,7 @@ from homeassistant.helpers.aiohttp_client import async_create_clientsession
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.storage import Store
 
-from ..helpers.const import (
-    ACCESS_MODES,
-    BASE_URL,
-    COUNTRIES_CONFIG,
-    DEVICE_CONFIG_MANAGER,
-    DEVICES_CONFIG,
-    DOMAIN,
-    SERVICE_UPDATE_REMOTE_CONFIGURATION,
-    STORAGE_VERSION,
-    TUYA_CONFIGURATIONS,
-    TUYA_RELATED_DOMAINS,
-    TUYA_SPECIAL_MAPPING,
-    TUYA_TYPES_MAPPING,
-    TUYA_UNSUPPORTED_CATEGORIES_DATA_KEYS,
-    UNITS_CONFIG,
-)
+from ..helpers.const import *
 from .tuya_platform_manager import TuyaPlatformManager
 
 _LOGGER = logging.getLogger(__name__)
@@ -85,6 +70,9 @@ class TuyaConfigurationManager:
                 data = await self._get_configuration(config_file)
 
                 await store.async_save(data)
+
+                if force_remote_config:
+                    await self._hass.services.async_call(HA_NAME, SERVICE_RELOAD, data)
 
             self._data[config_file] = data
 

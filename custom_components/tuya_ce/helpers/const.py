@@ -20,6 +20,9 @@ from homeassistant.const import (
 
 DOMAIN = "tuya_ce"
 
+HA_NAME = "homeassistant"
+SERVICE_RELOAD = "reload_config_entry"
+
 DEVICE_CONFIG_MANAGER = "device_config_manager"
 
 STORAGE_VERSION = 1
