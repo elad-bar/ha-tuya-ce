@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from contextlib import suppress
 import json
+import logging
 from typing import Any, cast
 
 from tuya_iot import TuyaDevice
@@ -25,11 +26,15 @@ from .helpers.const import (
 )
 from .models.ha_tuya_data import HomeAssistantTuyaData
 
+_LOGGER = logging.getLogger(__name__)
+
 
 async def async_get_config_entry_diagnostics(
     hass: HomeAssistant, entry: ConfigEntry
 ) -> dict[str, Any]:
     """Return diagnostics for a config entry."""
+    _LOGGER.debug("Starting diagnostic tool")
+
     tuya_manager = await TuyaConfigurationManager.load(hass)
 
     return _async_get_diagnostics(hass, tuya_manager, entry)
@@ -52,6 +57,8 @@ def _async_get_diagnostics(
     device: DeviceEntry | None = None,
 ) -> dict[str, Any]:
     """Return diagnostics for a config entry."""
+    _LOGGER.debug("Getting diagnostic information")
+
     hass_data: HomeAssistantTuyaData = hass.data[DOMAIN][entry.entry_id]
 
     mqtt_connected = None
@@ -70,10 +77,15 @@ def _async_get_diagnostics(
 
     if device:
         tuya_device_id = next(iter(device.identifiers))[1]
+
+        _LOGGER.debug(f"Getting diagnostic information for device #{tuya_device_id}")
+
         data |= _async_device_as_dict(
             hass, hass_data.device_manager.device_map[tuya_device_id]
         )
     else:
+        _LOGGER.debug("Getting diagnostic information for all devices")
+
         data.update(
             devices=[
                 _async_device_as_dict(hass, device)
@@ -81,6 +93,7 @@ def _async_get_diagnostics(
             ]
         )
 
+    _LOGGER.debug(f"Starting gap analysis, Data: {data}")
     tuya_manager.perform_gap_analysis(data)
 
     return data
