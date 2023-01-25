@@ -134,6 +134,28 @@
       "cloudy": "Cloudy",
       "rainy": "Rainy",
       "snowy": "Snowy"
+    },
+    "tuya_ce__air_fryer_mode": {
+      "fries":  "Fries",
+      "wings":  "Wings",
+      "steak":  "Steak",
+      "shrimp":  "Shrimp",
+      "fish":  "Fish",
+      "onionrings":  "Onion rings",
+      "pizza":  "Pizza",
+      "bacon":  "Bacon",
+      "cake":  "Cake",
+      "toast":  "Toast",
+      "vegetable":  "Vegetable",
+      "diy":  "DIY",
+      "cloud":  "Cloud",
+      "default":  "Default",
+      "warm":  "Warm",
+      "preheat":  "Preheat"
+    },
+    "tuya_ce__air_fryer_temp_unit_convert": {
+      "f": "Fahrenheit",
+      "c": "Celsius"
     }
   }
 }

@@ -65,4 +65,5 @@ venv/
 
 __test__.py
 **/__pycache_/
+input/*
 config/ha.json

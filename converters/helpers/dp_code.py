@@ -2,7 +2,7 @@ from homeassistant.backports.enum import StrEnum
 from homeassistant.components.tuya import DPCode
 
 
-class ExtendedDPCode(DPCode):
+class ExtendedDPCode(StrEnum):
     """Data Point Codes used by Tuya.
 
     https://developer.tuya.com/en/docs/iot/standarddescription?id=K9i5ql6waswzq

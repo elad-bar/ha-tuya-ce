@@ -16,6 +16,15 @@
             "reserve_3": "Reserve 3",
             "standby": "Standby",
             "warm": "Heat preservation"
+        },
+        "air_fryer_status": {
+          "standby": "Standby",
+          "appointment": "Appointment",
+          "cooking": "Cooking",
+          "done": "Done",
+          "warm": "Warm",
+          "off": "Off",
+          "stop": "Stop"
         }
     }
 }
