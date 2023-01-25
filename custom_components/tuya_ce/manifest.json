@@ -23,5 +23,5 @@
   ],
   "integration_type": "hub",
   "loggers": ["tuya_iot"],
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
