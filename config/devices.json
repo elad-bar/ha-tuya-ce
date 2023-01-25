@@ -1,4 +1,125 @@
 {
+    "infrared_ac": {
+        "switch": [
+            {
+                "key": "PowerOn",
+                "name": "Power On"
+            },
+            {
+                "key": "PowerOff",
+                "name": "Power Off"
+            }
+        ],
+        "number": [
+            {
+                "key": "F",
+                "name": "Wind"
+            },
+            {
+                "key": "T",
+                "name": "Temperature"
+            },
+            {
+                "key": "M",
+                "name": "Mode"
+            }
+        ]
+    },
+    "kqzg": {
+        "sensor": [
+            {
+                "key": "status",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:air-filter",
+                "name": "Status",
+                "translation_key": "air_fryer_status"
+            },
+            {
+                "key": "temp_current",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:air-filter",
+                "name": "Temperature"
+            },
+            {
+                "key": "remain_time",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:progress-clock",
+                "name": "Remain Time"
+            },
+            {
+                "key": "shake",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:air-filter",
+                "name": "Shake"
+            },
+            {
+                "key": "stage_time",
+                "entity_registry_enabled_default": true,
+                "icon": "mdi:progress-clock",
+                "name": "Stage Time"
+            }
+        ],
+        "switch": [
+            {
+                "key": "switch",
+                "name": "Power"
+            },
+            {
+                "key": "start",
+                "icon": "mdi:kettle-steam",
+                "name": "Start"
+            },
+            {
+                "key": "pause",
+                "name": "Pause"
+            },
+            {
+                "key": "warm",
+                "name": "Warm"
+            },
+            {
+                "key": "preheat",
+                "name": "Preheat"
+            }
+        ],
+        "select": [
+            {
+                "key": "mode",
+                "entity_category": "config",
+                "name": "Mode",
+                "translation_key": "air_fryer_mode"
+            },
+            {
+                "key": "temp_unit_convert",
+                "entity_category": "config",
+                "name": "Temperature Unit",
+                "translation_key": "air_fryer_temp_unit_convert"
+            }
+        ],
+        "number": [
+            {
+                "key": "cloud_recipe_number",
+                "icon": "mdi:thermometer-lines",
+                "name": "Recipe Number"
+            },
+            {
+                "key": "cook_temperature",
+                "device_class": "temperature",
+                "icon": "mdi:thermometer-lines",
+                "name": "Cook Temperature"
+            },
+            {
+                "key": "appointment_time",
+                "icon": "mdi:progress-clock",
+                "name": "Appointment Time"
+            },
+            {
+                "key": "cook_time",
+                "icon": "mdi:progress-clock",
+                "name": "Cook Time"
+            }
+        ]
+    },
     "mal": {
         "alarm_control_panel": [
             {

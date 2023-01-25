@@ -16,6 +16,15 @@
       "mild": "Mild",
       "good": "Good",
       "severe": "Severe"
+    },
+    "air_fryer_status": {
+      "standby": "Standby",
+      "appointment": "Appointment",
+      "cooking": "Cooking",
+      "done": "Done",
+      "warm": "Warm",
+      "off": "Off",
+      "stop": "Stop"
     }
   }
 }
