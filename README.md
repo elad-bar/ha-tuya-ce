@@ -2,6 +2,8 @@
 
 ## Description
 
+**Project no longer under maintenance, switched to LocalTuya (Wifi devices + Zigbee2MQTT)**
+
 Fork of the original Tuya integration support devices settings over JSON file instead of code for faster adoption of new devices
 
 ## How to
